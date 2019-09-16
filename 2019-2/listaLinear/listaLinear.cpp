@@ -42,13 +42,20 @@ Lista* Insert_Element_Final(Lista* Ptl,  Nodo c)
 //COLOCA UM ELEMENTO NA PRIMEIRA POSICAO
 Lista* Insert_Element_Initial(Lista* Ptl, Nodo c)
 {
-	for (int x=Ptl->finalList; x>0; x--){
-  		Ptl->dado[x] = Ptl->dado[x-1];
- 	}
- 	Ptl->dado[0] = Ptl->dado[0] = c;
- 	Ptl->finalList++;
- 	printf("\nCADASTRO CONCLUIDO COM SUCESSO");
- 	return Ptl;
+	if (Ptl->finalList == 0){
+		Ptl->dado[0] = Ptl->dado[0] = c;
+		Ptl->finalList++;
+ 		printf("\nCADASTRO CONCLUIDO COM SUCESSO");
+ 		return Ptl;
+	}else{
+		for (int x=Ptl->finalList; x>0; x--){
+	  		Ptl->dado[x] = Ptl->dado[x-1];
+	 	}
+	 	Ptl->dado[0] = Ptl->dado[0] = c;
+	 	Ptl->finalList++;
+	 	printf("\nCADASTRO CONCLUIDO COM SUCESSO");
+	 	return Ptl;
+	}
 }
 
 //EXCLUIR O PRIMEIRO ELEMENTO
@@ -107,6 +114,7 @@ Lista* insertAfterName(Lista* Ptl, char nome[], Nodo c ){
 			Ptl->dado[i+1] = Ptl->dado[i+1] = c;
 		 	Ptl->finalList++;
 		 	return Ptl;
+		}
 	}
 }
 
