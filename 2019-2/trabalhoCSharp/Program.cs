@@ -32,16 +32,16 @@ namespace ProjetoCSharp
                             Cadastro.AddClient(client);
                             break;
                         case 2:
-                            Cadastro.AlterClient(client, Cadastro.picName());
+                            Cadastro.AlterClient(client, Cadastro.PicName());
                             break;
                         case 3:
-                            Cadastro.GetClientByName(client, Cadastro.picName());
+                            Cadastro.GetClientByName(client, Cadastro.PicName());
                             break;
                         case 4:
                             Cadastro.ListClients(client);
                             break;
                         case 5:
-                            Cadastro.RemoveClient(client, Cadastro.picName());
+                            Cadastro.RemoveClient(client, Cadastro.PicName());
                             break;
                         case 6:
                             Console.WriteLine("\nPROGRAMA ENCERRADO");
@@ -64,7 +64,7 @@ namespace ProjetoCSharp
                 
                 //ArrayList client = new ArrayList();
 
-                //client.Add(new Cadastro(Cadastro.picName(), Cadastro.picEmail(), Cadastro.picNumber()));
+                //client.Add(new Cadastro(Cadastro.PicName(), Cadastro.PicEmail(), Cadastro.PicNumber()));
                 
 
                 //Console.WriteLine("client List:");
