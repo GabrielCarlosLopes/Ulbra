@@ -1,65 +1,107 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
-namespace Trabalho
+namespace ProjetoCSharp
 {
     class Cadastro
     {
-  
-        public int Codigo;
-        public String Nome;
-        public String Endereco;
-        public String Telefone;
-        public String Email;
+        private string name;
+        private string email;
+        private string number;
 
-        public static int codIncrement;
+
+        public Cadastro(string a, string b, string c)
+        {
+            this.name = a;
+            this.email = b;
+            this.number = c;
+        }
 
         public override string ToString()
         {
-            return "\n"+Codigo+": "+Nome+", "+Endereco+", "+Telefone+", "+Email;
+            return "Nome: " + name + 
+                " Email:" + email + 
+                " Number: " + number;
         }
 
-        public void ler()
+        public static string picName()
         {
-            Codigo = codIncrement;
-            codIncrement++;
-            Console.WriteLine("\nSEU CODIGO EH: " + Codigo);
-            Console.WriteLine("\nDIGITE O NOME: ");
-            Nome = Console.ReadLine();
-            Console.WriteLine("\nDIGITE O ENDERECO: ");
-            Endereco = Console.ReadLine();
-            Console.WriteLine("\nDIGITE O TELEFONE: ");
-            Telefone = Console.ReadLine();
-            Console.WriteLine("\nDIGITE O EMAIL: ");
-            Email = Console.ReadLine();  
+            Console.Write("\nNome do Cliente: ");
+            return Console.ReadLine();
+
         }
 
-        public static void consultar(Cadastro[] lista, String nome)
+        public static string picEmail()
         {
-            for(int i=0; i<codIncrement; i++)
+            Console.Write("\nEmail: ");
+            return Console.ReadLine();
+        }
+
+        public static string picNumber()
+        {
+            Console.Write("\nNumero de Telefone: ");
+            return Console.ReadLine();
+        }
+
+        public static void GetClientByName(List<Cadastro> list, string n)
+        {
+            var client = list.SingleOrDefault(x => x.name.Equals(n));
+            if(client != null) {
+                Console.WriteLine($"nome: {client.name} \nEmail: {client.email} \nNumero: {client.number}");
+            }
+            else
             {
-                if (nome.Equals(lista[i].Nome))
-                {
-                    Console.WriteLine(lista[i].Codigo+", "+
-                        lista[i].Nome+", "+
-                        lista[i].Endereco+", "+
-                        lista[i].Email);
-                    break;
-                }
+                Console.WriteLine("\nCliente nao encontrado");
+            }
+            
+
+        }
+
+        public static void ListClients(List<Cadastro> list)
+        {
+            foreach(var client in list)
+            {
+                Console.WriteLine(client);
             }
         }
 
-        public static void mostrar(Cadastro[] lista)
+         
+        public static void RemoveClient(List<Cadastro> list, string n)
         {
-            for(int i=0; i<codIncrement; i++)
+            var client = list.SingleOrDefault(x => x.name.Equals(n));
+            if(client != null)
             {
-                Console.WriteLine(lista[i]);
+                Console.WriteLine("\nCliente excluido com sucesso");
+                list.Remove(client);
+            }
+            else{
+                Console.WriteLine("\nCliente nao encontrado");
             }
         }
 
-        
 
-        
+        public static void AlterClient(List<Cadastro> list, string n)
+        {
+            var client = list.SingleOrDefault(x => x.name.Equals(n));
+            if (client != null) {
+                client.name = Cadastro.picName();
+                client.email = Cadastro.picEmail();
+                client.number = Cadastro.picNumber();
+            }
+            else
+            {
+                Console.WriteLine("\nCliente nao encontrado");
+            }
+        }
+
+        public static void AddClient(List<Cadastro> list)
+        {
+            list.Add(new Cadastro(Cadastro.picName(), Cadastro.picEmail(), Cadastro.picNumber()));
+            Console.WriteLine("\nCADASTRO CONCLUIDO");
+        }
+
     }
 }
