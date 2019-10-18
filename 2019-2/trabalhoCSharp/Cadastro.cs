@@ -27,25 +27,29 @@ namespace ProjetoCSharp
                 " Number: " + number;
         }
 
+		//PEGA O NOME DO USUARIO E RETORNA UMA STRING
         public static string picName()
         {
             Console.Write("\nNome do Cliente: ");
             return Console.ReadLine();
 
         }
-
+		
+		//PEGA O EMAIL DO USUARIO E RETORNA UMA STRING
         public static string picEmail()
         {
             Console.Write("\nEmail: ");
             return Console.ReadLine();
         }
 
+		//PEGA O NUMERO DO USUARIO E RETORNA UMA STRING
         public static string picNumber()
         {
             Console.Write("\nNumero de Telefone: ");
             return Console.ReadLine();
         }
 
+		//PROCURA NA LISTA UM CLIENTE A PARTIR DO NOME E MOSTRA NA TELA TODAS INFORMACOES DO CLIENTE PROCURADO
         public static void GetClientByName(List<Cadastro> list, string n)
         {
             var client = list.SingleOrDefault(x => x.name.Equals(n));
@@ -60,6 +64,7 @@ namespace ProjetoCSharp
 
         }
 
+		//LISTA TODOS OS CLIENTES EXISTENTES NA LISTA
         public static void ListClients(List<Cadastro> list)
         {
             foreach(var client in list)
@@ -69,6 +74,7 @@ namespace ProjetoCSharp
         }
 
          
+		//PROCURA UM CLIENTE A PARTIR DO NOME E EXLUI O MESMO DA LISTA
         public static void RemoveClient(List<Cadastro> list, string n)
         {
             var client = list.SingleOrDefault(x => x.name.Equals(n));
@@ -83,6 +89,7 @@ namespace ProjetoCSharp
         }
 
 
+		//PROCURA UM CLIENTE PELO NOME E APOS ALTERA SUAS INFORMACOES
         public static void AlterClient(List<Cadastro> list, string n)
         {
             var client = list.SingleOrDefault(x => x.name.Equals(n));
@@ -97,6 +104,8 @@ namespace ProjetoCSharp
             }
         }
 
+
+		//ADICIONA UM CLIENTE NA LISTA
         public static void AddClient(List<Cadastro> list)
         {
             list.Add(new Cadastro(Cadastro.picName(), Cadastro.picEmail(), Cadastro.picNumber()));
