@@ -54,24 +54,6 @@ namespace ProjetoCSharp
 
 
                 }
-               
-                
-                
-                
-                
-                
-                
-                
-                //ArrayList client = new ArrayList();
-
-                //client.Add(new Cadastro(Cadastro.PicName(), Cadastro.PicEmail(), Cadastro.PicNumber()));
-                
-
-                //Console.WriteLine("client List:");
-                //foreach (Cadastro i in client)
-                //{
-                  //  Console.WriteLine("   " + i);
-                //}
             }
 
         }
