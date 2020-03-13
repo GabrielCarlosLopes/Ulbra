@@ -1,0 +1,360 @@
+body {
+    margin: 0px
+}
+
+body p {
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+body h4 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+body h5 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+.container-page {
+    width: 100%;
+    height: 2000px;
+    background: #2E0142;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.container-page .page {
+    width: 70%;
+    height: 1700px;
+    background:#7303A3;
+    border-radius: 10px;
+}
+
+.container-page .page .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.container-page .page .name .name-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 95%;
+    border: solid 2px white;
+    color: white;
+    border-radius: 25px;
+    font-size: 200%;
+}
+
+.container-page .page .informations {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 250px;
+}
+
+.container-page .page .informations .image-box {
+    flex-direction: row;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-page .page .informations .image-box img {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 80%;
+}
+
+.container-page .page .informations .informations-box {
+    margin-left: 25px;
+    height: 100%;
+    width: 70%;
+}
+
+.container-page .page .informations .informations-box p {
+    margin-top: 25px;
+    color: white;
+}
+
+.container-page .page .informations .informations-box .info {
+    margin-left: 3px;
+}
+
+.page .informations .informations-box .content-informations {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-page .page .row-content {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.container-page .page .row-content .enun {
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container-page .page .row-content .enun h5 {
+    color: white;
+    font-size: 150%;
+}
+
+.container-page .page .row-content .enun .row {
+    margin-left: 20px;
+    width: 80%;
+    height: 2px;
+    background-color: white;
+}
+
+.container-page .page .row-content .content-informations {
+    height: 200px;
+    width: 80%;
+    margin-left: 100px;
+    padding-right: 20px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container-page .page .formation {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.container-page .page .formation .enun {
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container-page .page .formation .enun h5 {
+    color: white;
+    font-size: 150%;
+}
+
+.container-page .page .formation .enun .row {
+    margin-left: 20px;
+    width: 78%;
+    height: 2px;
+    background-color: white;
+}
+
+.container-page .page .formation .formation-container .formation-row{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-page .page .formation .formation-container .formation-row p {
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+.container-page .page .formation .formation-container .formation-row h4 {
+    margin-left: 50px;
+    margin-bottom: 0px;
+}
+
+.container-page .page .content-left {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    float: left;
+    width: 47%;
+    height: 840px;
+}
+
+
+.container-page .page .content-left .container-content-left {
+    margin-top: 3px;
+    width: 90%;
+    height: 500px;
+    color: white;
+}
+
+.container-page .page .content-left .container-content-left-specs {
+    color: white;
+    margin-top: 3px;
+    width: 90%;
+    height: 250px;
+}
+
+.container-page .page .content-left .container-content-left .title-content-left .line-title {
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    border: solid 1px transparent;
+    border-radius: 12px;
+}
+
+.container-page .page .content-left .container-content-left-specs .title-content-left .line-title {
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    border: solid 1px transparent;
+    border-radius: 12px;
+}
+
+.container-page .page .content-left .container-content-left .title-content-left h4 {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.container-page .page .content-left .container-content-left-specs .title-content-left h4 {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.container-page .page .content-left .container-content-left .skills-row {
+    font-family: Helvetica, sans-serif;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+.container-page .page .content-left .container-content-left-specs .skills-row {
+    font-family: Helvetica, sans-serif;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+.container-page .page .content-left .container-content-left .skills-row .skills-level {
+    height: 20px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-page .page .content-left .container-content-left-specs .skills-row .skills-level {
+    height: 20px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-page .page .content-left .container-content-left .skills-row .skills-level .skills-ball {
+    width: 4%;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.container-page .page .content-left .container-content-left-specs .skills-row .skills-level .skills-ball {
+    width: 4%;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.container-page .page .content-left .container-content-left .skills-row .skills-level .ball-off {
+    width: 4%;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.container-page .page .content-left .container-content-left-specs .skills-row .skills-level .ball-off {
+    width: 4%;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.container-page .page .divider {
+    float: left;
+    width: 6%;
+    height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-page .page .divider .row{
+    height: 800px;
+    width: 5px;
+    border-radius: 50px;
+    border: solid 1px transparent;
+    background-color: white;
+}
+
+.container-page .page .content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    width: 47%;
+    height: 590px;
+}
+
+.container-page .page .content-right .container-content-right {
+    margin-top: 23px;
+    width: 90%;
+    height: 300px;
+}
+
+.container-page .page .content-right .container-content-right .title-content-right .line-title {
+    background-color:white;
+    height: 1px;
+    width: 100%;
+    border: solid 1px transparent;
+    border-radius: 12px;
+}
+
+.container-page .page .content-right .container-content-right .title-content-right h4 {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.container-page .page .content-right .container-content-right .container-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-page .page .content-right .container-content-right .container-text h4 {
+    margin-bottom: 0px;
+}
+
+.container-page .page .content-right .container-content-right .container-text p {
+    margin-bottom: 0px;
+}
+
+
