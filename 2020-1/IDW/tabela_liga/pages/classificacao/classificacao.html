@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Liga dos Campeões</title>
+</head>
+
+<body>
+    <div class="tudo">
+        <div id="cabecalho">
+            <h4>Liga dos Campeões da UEFA</h4>
+            <div class="cabecalho-bottom">
+                <ol id="op-cabecalho">
+                    <li><a href="../../Index.html">PARTIDAS</a></li>
+                    <li><a href="#">NOTÍCIAS</a></li>
+                    <li id="selected"><a href="classificacao.html">CLASSIFICAÇÂO</a></li>
+                    <li><a href="#">ESTATÍSTICAS</a></li>
+                    <li><a href="../players/player.html">JOGADORES</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="full-table">
+            <div id="group-name">Grupo A</div>
+            <div>
+                <table id="table-group">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th colspan="5" id="name-club">
+                                <div>Clube</div>
+                            </th>
+                            <th>
+                                <div>Pts</div>
+                            </th>
+                            <th>
+                                <div>PJ</div>
+                            </th>
+                            <th>
+                                <div>VIT</div>
+                            </th>
+                            <th>
+                                <div>E</div>
+                            </th>
+                            <th>
+                                <div>DER</div>
+                            </th>
+                            <th>
+                                <div>GP</div>
+                            </th>
+                            <th>
+                                <div>GC</div>
+                            </th>
+                            <th>
+                                <div>SG</div>
+                            </th>
+                            <th colspan="2">
+                                <div>últimas cinco</div>
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">1</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="PSG">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">2</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://logodownload.org/wp-content/uploads/2015/05/Barcelona-logo-escudo-4.png" alt="Barcelona">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>Barcelona</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class-warning"></div>
+                            </td>
+                            <td id="team-number">3</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img style="width: 50%;" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" alt="Real Madrid">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>Real Madrid</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div></div>
+                            </td>
+                            <td id="team-number">4</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://1.bp.blogspot.com/-S0fgd2TOXYw/W41Tq_nSJ5I/AAAAAAAAIBs/Ur0VRscw8vUBtFQcEyE3p5LJ0eoZApvkQCLcBGAs/s1600/manchestercity001.png" alt="City">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>City</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div id="group-name">Grupo B</div>
+            <div>
+                <table id="table-group">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th colspan="5" id="name-club">
+                                <div>Clube</div>
+                            </th>
+                            <th>
+                                <div>Pts</div>
+                            </th>
+                            <th>
+                                <div>PJ</div>
+                            </th>
+                            <th>
+                                <div>VIT</div>
+                            </th>
+                            <th>
+                                <div>E</div>
+                            </th>
+                            <th>
+                                <div>DER</div>
+                            </th>
+                            <th>
+                                <div>GP</div>
+                            </th>
+                            <th>
+                                <div>GC</div>
+                            </th>
+                            <th>
+                                <div>SG</div>
+                            </th>
+                            <th colspan="2">
+                                <div>últimas cinco</div>
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">1</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">2</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class-warning"></div>
+                            </td>
+                            <td id="team-number">3</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div></div>
+                            </td>
+                            <td id="team-number">4</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div id="group-name">Grupo C</div>
+            <div>
+                <table id="table-group">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th colspan="5" id="name-club">
+                                <div>Clube</div>
+                            </th>
+                            <th>
+                                <div>Pts</div>
+                            </th>
+                            <th>
+                                <div>PJ</div>
+                            </th>
+                            <th>
+                                <div>VIT</div>
+                            </th>
+                            <th>
+                                <div>E</div>
+                            </th>
+                            <th>
+                                <div>DER</div>
+                            </th>
+                            <th>
+                                <div>GP</div>
+                            </th>
+                            <th>
+                                <div>GC</div>
+                            </th>
+                            <th>
+                                <div>SG</div>
+                            </th>
+                            <th colspan="2">
+                                <div>últimas cinco</div>
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">1</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://logodownload.org/wp-content/uploads/2015/05/Barcelona-logo-escudo-4.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>Barcelona</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class"></div>
+                            </td>
+                            <td id="team-number">2</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="bar-class-warning"></div>
+                            </td>
+                            <td id="team-number">3</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div></div>
+                            </td>
+                            <td id="team-number">4</td>
+                            <td colspan="4" id="team">
+                                <div id="row-team">
+                                    <div id="img-team">
+                                        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="">
+                                    </div>
+                                    <div id="team-name">
+                                        <p>PSG</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>16</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td colspan="2">
+                                <div>
+                                    <div id="balls">
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/draw.svg" alt="draw"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                        <div><img src="../../icons/lose.svg" alt="lose"></div>
+                                        <div><img src="../../icons/win.svg" alt="win"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

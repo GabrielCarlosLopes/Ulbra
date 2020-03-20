@@ -1,0 +1,78 @@
+#full-table {
+    height: 800px;
+    width: 70%;
+    background-color: lightgray;
+}
+
+#group-name {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    margin-left: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+#table-group {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#name-club {
+    text-align: left;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px white;
+    text-align: center;
+}
+
+#bar-class {
+    width: 3px;
+    height: 40px;
+    background-color: rgb(66, 133, 244);
+}
+
+#team-number {
+    text-align: center;
+    padding-right: 30px;
+}
+
+#row-team {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#team-name p {
+    width: 100%;
+    justify-items: start;
+}
+
+#img-team {
+    text-align: center;
+    width: 25%;
+    margin-top: 3px;
+}
+
+#balls {
+    display: flex;
+}
+
+#balls img {
+    width: 100%;
+}
+
+#bar-class-warning {
+    width: 3px;
+    height: 40px;
+    background-color: tomato;
+}

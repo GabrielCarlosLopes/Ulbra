@@ -1,0 +1,107 @@
+body {
+    background-color: #293F80;
+}
+
+.image_people img {
+    border: 1px solid white;
+    width: 12%;
+    margin-top: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image_people h2 {
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    max-height: 2000px;
+    margin-top: 50px;
+}
+
+.container .sobre_mim {
+    max-width: 1100px;
+    margin: 0 auto;
+    max-height: 1500px;
+    background-color: #3C5BBA;
+    border-radius: 10px;
+    width: 40%;
+    float: left;
+}
+
+.container .sobre_mim h4 {
+    font-family: Helvetica;
+    color: white;
+    margin-left: 10px;
+}
+
+.container .sobre_mim p {
+    font-family: Helvetica;
+    color: white;
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.technologies {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #3C5BBA;
+    border-radius: 10px;
+    width: 25%;
+    height: 360px;
+    float: left;
+    margin-left: 50px
+}
+
+.technologies h4 {
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+}
+
+.technologies li {
+    font-family: Helvetica;
+    color: white;
+}
+
+.basic_information {
+    max-width: 1128px;
+    margin: 0 auto;
+    height: 360px;
+    background-color: #3C5BBA;
+    border-radius: 10px;
+    width: 25%;
+    float: left;
+    margin-left: 50px;
+}
+
+.basic_information h4 {
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+}
+
+.basic_information li {
+    font-family: Helvetica;
+    color: white;
+}
+
+.social_medias {
+    clear: both;
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social_medias img {
+    border: solid 1px white;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
