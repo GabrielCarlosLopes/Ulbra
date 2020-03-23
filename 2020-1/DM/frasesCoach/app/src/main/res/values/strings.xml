@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">frasesCoach</string>
+    <string name="imagem_de_conversa">imagem de conversa</string>
+    <string name="gerar_frase_motivacional">Gerar frase motivacional</string>
+
+
+    <string-array name="frases">
+        <item>"Quanto mais eu treino, mais sorte eu tenho"</item>
+        <item>"Controle o seu destino ou alguém controlará"</item>
+        <item>"Um bom chefe faz com que homens comuns façam coisas incomuns"</item>
+        <item>"Você esta com mindset limtante"</item>
+        <item>"Você é capaz de tudo"</item>
+    </string-array>
+</resources>
