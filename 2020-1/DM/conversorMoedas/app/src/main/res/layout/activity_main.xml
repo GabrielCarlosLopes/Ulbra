@@ -6,78 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <EditText
+        android:id="@+id/editValue"
+        android:layout_width="361dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="40dp"
+        android:autofillHints="campo de valor"
+        android:ems="10"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:hint="@string/digite_um_valor_em_r"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="UselessParent">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="92dp"
+        android:autofillHints="Texto"
+        android:text="@string/conversor"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-            <LinearLayout
-                android:gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+    <TextView
+        android:id="@+id/dolar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/editValue"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="205dp" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/conversor"
-                    android:autofillHints="Texto"
-                    android:textSize="28sp" />
-
-                <EditText
-                    android:autofillHints="campo de dolar"
-                    android:id="@+id/dolarController"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="@string/dolar"
-                    android:inputType="numberDecimal" />
-
-                <EditText
-                    android:autofillHints="campo de euro"
-                    android:id="@+id/euroController"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="@string/euro"
-                    android:inputType="numberDecimal" />
-
-                <EditText
-                    android:autofillHints="campo de real"
-                    android:id="@+id/realController"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="@string/real"
-                    android:inputType="numberDecimal" />
-
-                <Button
-                    android:id="@+id/btnConvert"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="85dp"
-                    android:onClick="convertClick"
-                    android:text="@string/converter"
-                    tools:ignore="OnClick" />
-            </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/euro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/dolar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

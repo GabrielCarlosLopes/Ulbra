@@ -2,11 +2,11 @@ package com.lopes.conversormoedas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,13 +14,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
 
-        fun convertClick(view: View){
-            val dolar = dolarController.text.toString().toDouble();
-            val euro = euroController.text.toString().toDouble();
-            val real = realController.text.toString().toDouble();
+        editValue.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                var valor = editValue.text.toString().toDouble()
+                var contDolar: Double = valor / 5
+                var contEuro: Double = valor / 4
 
 
-            Log.i(dolar.toString(), euro.toString())
-        }
+                dolar.text = editValue.text.toString()
+                euro.text = editValue.text.toString()
+
+            }
+        })
     }
 }
