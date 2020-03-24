@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">conversorDeMoedas</string>
+    <string name="digite_um_valor_em_r">Digite um valor em R$</string>
+    <string name="imagem_de_moeda">Imagem de moeda</string>
+    <string name="converter">Converter</string>
+</resources>

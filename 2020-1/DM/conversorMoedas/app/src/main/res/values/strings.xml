@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">conversorMoedas</string>
-    <string name="dolar">Dolar</string>
-    <string name="euro">Euro</string>
-    <string name="real">Real</string>
-    <string name="converter">Converter</string>
-    <string name="conversor">$CONVERSOR$</string>
-    <string name="digite_um_valor_em_r">Digite um valor em R$</string>
-</resources>
