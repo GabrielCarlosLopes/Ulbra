@@ -28,10 +28,11 @@
 
 th {
     text-align: center;
+    border-bottom: 1px solid white;
 }
 
 td {
-    border-bottom: 1px white;
+    border-bottom: 1px solid white;
     text-align: center;
 }
 
