@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculo Cerveja</string>
+    <string name="marca">Marca</string>
+    <string name="litros">litros</string>
+    <string name="imagem_de_cerveja">Imagem de cerveja</string>
+    <string name="valor_r">Valor(R$)</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="lista_de_cervejas">LISTA DE CERVEJAS</string>
+    <string name="setings">setings</string>
+
+</resources>
