@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/secondaryColor">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -20,6 +21,7 @@
         app:srcCompat="@drawable/cerveja" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:contentDescription="@string/local_para_inserir_a_marca_da_cerveja"
         android:id="@+id/marcaInput"
         android:layout_width="275dp"
         android:layout_height="49dp"
@@ -41,6 +43,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:contentDescription="@string/locar_para_inserir_a_quantidade_de_litros"
         android:id="@+id/litrosInput"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -59,6 +62,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:contentDescription="@string/local_para_inserir_o_valor_da_cerveja"
         android:id="@+id/valorInput"
         android:layout_width="244dp"
         android:layout_height="50dp"
@@ -79,19 +83,21 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:contentDescription="@string/bot_o_para_adicionar_a_cerveja_a_lista"
         android:id="@+id/btnAdicionar"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
-        android:onClick="addList"
         android:text="@string/adicionar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/valorInput"
         app:layout_constraintTop_toBottomOf="@+id/litrosInput"
-        tools:ignore="OnClick" />
+        tools:ignore="OnClick"
+        android:background="@color/colorPrimary"/>
 
     <Button
+        android:contentDescription="@string/bot_o_para_ir_tela_da_lista_de_cervejas"
         android:id="@+id/btnList"
         android:layout_width="0dp"
         android:layout_height="51dp"
@@ -102,6 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valorInput"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@color/colorPrimary"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

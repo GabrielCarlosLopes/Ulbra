@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">" beer cooler"</string>
+    <string name="imagem_de_cerveja">" beer image"</string>
+    <string name="litros">" liters"</string>
+    <string name="adicionar">" add"</string>
+    <string name="valor_r">" value"</string>
+    <string name="lista_de_cervejas">" List of beers"</string>
+    <string name="valor_por_ml_s">" value per ml's"</string>
+    <string name="marca">brand</string>
+    <string name="valor">Value</string>
+    <string name="ml_s">mls</string>
+    <string name="local_para_inserir_a_marca_da_cerveja">" Place to insert the beer brand"</string>
+    <string name="locar_para_inserir_a_quantidade_de_litros">" Rent to enter the quantity of liters"</string>
+    <string name="local_para_inserir_o_valor_da_cerveja">" Place to enter the beer value"</string>
+    <string name="bot_o_para_adicionar_a_cerveja_a_lista">" Button to add beer to the list"</string>
+    <string name="bot_o_para_ir_tela_da_lista_de_cervejas">" Button to go to the beer list screen"</string>
+    <string name="card_com_as_informa_es_da_cerveja">" Card with beer information"</string>
+    <string name="mls_da_cerveja">mls beer</string>
+    <string name="nome_da_cerveja">" beer name"</string>
+    <string name="valor_da_cerveja">beer value</string>
+    <string name="valor_da_cerveja_por_ml">" Value of beer per ml"</string>
+</resources>

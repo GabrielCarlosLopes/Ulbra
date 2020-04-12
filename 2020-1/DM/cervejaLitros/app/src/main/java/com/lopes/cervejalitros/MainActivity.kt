@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Toast.makeText(applicationContext, "Por favor digite somente os mls. Por exemplo 1L = 1000 ml", Toast.LENGTH_LONG).show()
+
         btnAdicionar.setOnClickListener(View.OnClickListener {
             add()
         })
