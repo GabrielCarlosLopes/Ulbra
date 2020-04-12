@@ -1,3 +1,5 @@
+/* CONFIGURAÇÃO DE MARGENS */
+
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,20 +8,68 @@ body {
     margin: 0 auto;
 }
 
-header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
+a {
+    padding: 8px;
 }
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+header img {
+    padding: 5px;
+    height: 100px;
+}
+
+.menu {
+    padding: 32px;
+    width: 100%;
+}
+
+.menu #menu-nav {
+    background-color: white;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+#onSelected {
+    background-color: lightgray;
+}
+
+.menu #menu-nav a {
+    color: black;
+    width: 23%;
+    height: 50%;
+}
+
+.menu #menu-nav a:hover {
+    background-color: lightgray;
+}
+
+.menu #menu-nav a:link {
+    text-decoration: none;
+}
+
+
+/* NOTICIAS */
 
 nav {
     float: left;
     width: 70%;
-    height: 600px;
-    background: white;
-    padding: 20px;
+    height: 1060px;
+    background: #6089BF;
+    border-right: 2px lightgray solid;
+    padding: 5px;
 }
 
 nav ul {
@@ -27,59 +77,201 @@ nav ul {
     padding: 0;
 }
 
-article {
-    float: left;
-    padding: 20px;
-    width: 20%;
-    background-color: #f1f1f1;
-    height: 300px;
-}
-
-footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    clear: both;
-}
-
-a {
-    padding: 10px;
+a p:hover {
+    color: lightgray;
 }
 
 .noticia {
     padding: 10px;
-    background-color: aqua;
     height: 200px;
-    width: 95%;
+    width: 98%;
 }
 
 .title-content {
-    background-color: blueviolet;
     width: 60%;
     height: 98%;
     float: left;
 }
 
 .title-content h5 {
-    color: coral;
+    color: white;
 }
 
 .title-content p {
-    font-size: large;
+    font-size: 25px;
+    color: #000000;
+}
+
+.title-content span {
+    color: white;
 }
 
 .img-content {
-    margin-left: 50px;
-    background-color: brown;
+    width: 35%;
+    margin-left: 40px;
     float: left;
-    height: 98%;
+    height: 80%;
 }
 
 .img-content img {
-    width: 110%;
+    width: 100%;
 }
 
 li {
     border-bottom: lightgray 1px solid;
+}
+
+
+/* COLUNA DIREITA */
+
+article {
+    float: left;
+    width: 29%;
+    background-color: #79ACD9;
+    height: 1070px;
+}
+
+article ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.person {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+article li {
+    border-bottom: lightgray 1px solid;
+}
+
+.person-img {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.person-img img {
+    width: 80%;
+    height: 75%;
+    border-radius: 50%;
+}
+
+.img-noticia {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.img-noticia img {
+    width: 80%;
+    height: 50%;
+}
+
+.person-content {
+    width: 60%;
+    font-style: italic;
+}
+
+.person-content h4 {
+    color: #F2F2F2;
+}
+
+.pequena-noticia {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.pequena-noticia-content {
+    width: 60%;
+    color: #666;
+}
+
+.pequena-noticia-content p:hover {
+    color: black;
+}
+
+
+/* footer */
+
+footer {
+    height: 140px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}
+
+.linha {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 98%;
+}
+
+.linha img {
+    padding: 30px;
+    width: 15%;
+    height: 60%;
+}
+
+.informations {
+    padding: 30px;
+    width: 40%;
+    font-size: 15px;
+    text-align: left;
+}
+
+.wpp {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.number-name {
+    margin-top: 20px;
+    text-align: end;
+    height: 40px;
+    width: 70%;
+}
+
+.number-name p {
+    margin: 0;
+}
+
+.img-wpp {
+    margin-top: 20px;
+    width: 30%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.img-wpp img {
+    margin-left: 10px;
+    padding: 0;
+    width: 70%;
+    height: 70%;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-medias {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
+
+.social-medias img {
+    width: 20%;
+    height: 40%;
 }
