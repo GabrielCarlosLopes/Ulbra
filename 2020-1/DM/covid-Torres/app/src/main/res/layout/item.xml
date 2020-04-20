@@ -24,6 +24,7 @@
 
 
             <TextView
+                android:contentDescription="@string/data"
                 android:id="@+id/textView"
                 android:layout_width="103dp"
                 android:layout_height="22dp"
@@ -38,6 +39,7 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
+                android:contentDescription="@string/dia_do_boletim"
                 android:id="@+id/dataBoletim"
                 android:layout_width="150dp"
                 android:layout_height="27dp"
@@ -55,6 +57,7 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
+                android:contentDescription="@string/suspeitos"
                 android:id="@+id/textView3"
                 android:layout_width="93dp"
                 android:layout_height="26dp"
@@ -68,6 +71,7 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
+                android:contentDescription="@string/numero_de_suspeitos"
                 android:id="@+id/numeroSuspeitos"
                 android:layout_width="92dp"
                 android:layout_height="26dp"

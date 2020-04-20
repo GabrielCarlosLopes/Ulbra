@@ -25,6 +25,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
+        android:contentDescription="@string/confirmados"
         android:id="@+id/textView10"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -37,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBar" />
 
     <TextView
+        android:contentDescription="@string/monitoramento"
         android:id="@+id/textView14"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -49,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nConfirmados" />
 
     <TextView
+        android:contentDescription="@string/numero_de_pessoas_em_monitoramento"
         android:id="@+id/nMonitoramentos"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -61,6 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
+        android:contentDescription="@string/numero_de_casos_descartados"
         android:id="@+id/nDescartados"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -75,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
+        android:contentDescription="@string/numero_de_pessas_curadas"
         android:id="@+id/nCurados"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -87,6 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <TextView
+        android:contentDescription="@string/suspeitos_em_isolamento_hospitalar"
         android:id="@+id/textView22"
         android:layout_width="379dp"
         android:layout_height="69dp"
@@ -98,6 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nSdomiciliar" />
 
     <TextView
+        android:contentDescription="@string/numeoro_de_casos_suspeitos_em_isolamento_social"
         android:id="@+id/nSdomiciliar"
         android:layout_width="379dp"
         android:layout_height="30dp"
@@ -110,6 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
+        android:contentDescription="@string/boletim_do_dia"
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -123,6 +131,7 @@
         app:layout_constraintVertical_bias="0.307" />
 
     <TextView
+        android:contentDescription="@string/numero_de_casos_suspeitos_em_isolamento_hospitalar"
         android:id="@+id/nShospitalar"
         android:layout_width="379dp"
         android:layout_height="30dp"
@@ -135,6 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
+        android:contentDescription="@string/confirmados_em_isolamento_hospitalar"
         android:id="@+id/textView24"
         android:layout_width="379dp"
         android:layout_height="69dp"
@@ -147,6 +157,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nShospitalar" />
 
     <TextView
+        android:contentDescription="@string/mortes"
         android:id="@+id/textView16"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -161,6 +172,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nDescartados" />
 
     <TextView
+        android:contentDescription="@string/curados"
         android:id="@+id/textView18"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -173,6 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nMonitoramentos" />
 
     <TextView
+        android:contentDescription="Data do boletim"
         android:id="@+id/data"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -187,6 +200,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:contentDescription="@string/descartados"
         android:id="@+id/textView12"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -201,6 +215,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nSuspeitos" />
 
     <TextView
+        android:contentDescription="@string/numero_de_casos_confirmados_em_isolamento_hospitalr"
         android:id="@+id/nChospitalar"
         android:layout_width="379dp"
         android:layout_height="30dp"
@@ -213,6 +228,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
+        android:contentDescription="@string/horario_do_boletim"
         android:id="@+id/hora"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -226,6 +242,7 @@
         app:layout_constraintVertical_bias="0.307" />
 
     <TextView
+        android:contentDescription="@string/suspeitos"
         android:id="@+id/textView8"
         android:layout_width="188dp"
         android:layout_height="43dp"
@@ -240,6 +257,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBar" />
 
     <TextView
+        android:contentDescription="@string/numeoro_de_casos_suspeitos_em_isolamento_social"
         android:id="@+id/textView20"
         android:layout_width="379dp"
         android:layout_height="43dp"
@@ -252,6 +270,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nMortes" />
 
     <TextView
+        android:contentDescription="@string/numero_de_casos_suspeitos"
         android:id="@+id/nSuspeitos"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -266,6 +285,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
+        android:contentDescription="@string/numero_de_mortes"
         android:id="@+id/nMortes"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -280,6 +300,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
+        android:contentDescription="@string/numero_de_casos_confirmados"
         android:id="@+id/nConfirmados"
         android:layout_width="188dp"
         android:layout_height="30dp"
@@ -292,6 +313,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <ImageView
+        android:contentDescription="Imagem ilustrativa"
         android:id="@+id/imageView"
         android:layout_width="168dp"
         android:layout_height="71dp"
