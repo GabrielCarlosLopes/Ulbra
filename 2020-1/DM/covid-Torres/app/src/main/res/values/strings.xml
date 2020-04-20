@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Covid19</string>
+    <string name="data">Data</string>
+    <string name="bot_o_para_mais_informa_es">Botão para mais informações</string>
+    <string name="suspeitos">Suspeitos</string>
+    <string name="confirmados">Confirmados</string>
+    <string name="descartados">Descartados</string>
+    <string name="mortes">Mortes</string>
+    <string name="monitoramento">Monitoramento</string>
+    <string name="curados">Curados</string>
+    <string name="suspeitos_em_isolamento_social">Suspeitos em Isolamento Social</string>
+    <string name="suspeitos_em_isolamento_hospitalar">Suspeitos em Isolamento Hospitalar</string>
+    <string name="confirmados_em_isolamento_hospitalar">Confirmados em Isolamento Hospitalar</string>
+    <string name="boletim_do_dia">Boletim do Dia:</string>
+</resources>

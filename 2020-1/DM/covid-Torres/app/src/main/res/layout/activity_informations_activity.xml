@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryLightColor"
+    tools:context=".informations_activity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+        app:titleMarginStart="30dp"
+        app:titleTextColor="@color/primaryTextColor"
+        tools:ignore="MissingConstraints">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/confirmados"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/monitoramento"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nConfirmados" />
+
+    <TextView
+        android:id="@+id/nMonitoramentos"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/nDescartados"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/nMonitoramentos"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/nCurados"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="379dp"
+        android:layout_height="69dp"
+        android:gravity="center"
+        android:text="@string/suspeitos_em_isolamento_hospitalar"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nSdomiciliar" />
+
+    <TextView
+        android:id="@+id/nSdomiciliar"
+        android:layout_width="379dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/boletim_do_dia"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/data"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nChospitalar"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/nShospitalar"
+        android:layout_width="379dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="379dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/confirmados_em_isolamento_hospitalar"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nShospitalar" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/mortes"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nDescartados" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/curados"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nMonitoramentos" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="40dp"
+        android:text="00/00/00"
+        android:textColor="@color/secondaryColor"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hora"
+        app:layout_constraintTop_toBottomOf="@+id/nChospitalar"
+        app:layout_constraintVertical_bias="0.307"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/descartados"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nSuspeitos" />
+
+    <TextView
+        android:id="@+id/nChospitalar"
+        android:layout_width="379dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:text="00:00"
+        android:textColor="@color/secondaryColor"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nChospitalar"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:text="@string/suspeitos"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="379dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/suspeitos_em_isolamento_social"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nMortes" />
+
+    <TextView
+        android:id="@+id/nSuspeitos"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/nConfirmados"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/nMortes"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/nCurados"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/nConfirmados"
+        android:layout_width="188dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="0000"
+        android:textColor="@color/secondaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="168dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/virus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
