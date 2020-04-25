@@ -1,9 +1,16 @@
 package com.example.covid19
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,54 +24,97 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
+
   private var listaBoletim = arrayListOf<Boletim>()
   private var adapter = Adapter(listaBoletim)
+  private var asyncTask : BoletimTask? = null
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+    setSupportActionBar(findViewById(R.id.appBar))
 
-    readJson(this)
-
+    CarregaDados()
     rvDados.layoutManager = LinearLayoutManager(applicationContext)
     rvDados.itemAnimator = DefaultItemAnimator()
     rvDados.adapter = adapter
 
   }
 
-  fun readJson(context: Context) {
-    var json: String? = null
-    try {
-      val inputStream: InputStream = context.assets.open("data.json")
-      json = inputStream.bufferedReader().use { it.readText() }
-      var jsonArray = JSONArray(json)
-      for (i in 0 until jsonArray.length()) {
-        var js = jsonArray.getJSONObject(i)
-        val dia = formatarData(js.getString("boletim").substring(0, 10))
-        var boletim = Boletim(
-          js.getString("Suspeitos").toInt(),
-          js.getString("Confirmados").toInt(),
-          js.getString("Descartados").toInt(),
-          js.getString("Monitoramento").toInt(),
-          js.getString("Curados").toInt(),
-          js.getString("Sdomiciliar").toInt(),
-          js.getString("Shopitalar").toInt(),
-          js.getString("Chospitalar").toInt(),
-          js.getString("mortes").toInt(),
-          dia,
-          js.getString("boletim").substring(11, 16)
-        )
-        listaBoletim.add(boletim)
-      }
-    } catch (e: IOException) {
-      Log.e("Erro", "Impossivel ler JSON")
+  fun showProgress(show: Boolean){
+    if(show){
+      txtMsg.text = "Loading..."
+    }else{
+      txtMsg.visibility = if(show) View.VISIBLE else View.GONE
+      progressBar.visibility = if(show) View.VISIBLE else View.GONE
     }
   }
 
-  fun formatarData(data: String): String {
-    val diaString = data
-    var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-    var date = LocalDate.parse(diaString)
-    var formattedDate = date.format(formatter)
-    return formattedDate
+  fun CarregaDados(){
+    listaBoletim.clear()
+    if(listaBoletim.isNotEmpty()){
+      showProgress(false)
+    }else{
+      if(asyncTask==null){
+        if(BoletimHttp.hasConnection(this)){
+          //startDownload()
+          if(asyncTask?.status!=AsyncTask.Status.RUNNING){
+            asyncTask = BoletimTask()
+            asyncTask?.execute()
+          }
+        }else{
+          progressBar.visibility = View.GONE
+        }
+      }else if(asyncTask?.status==AsyncTask.Status.RUNNING){
+        showProgress(true)
+      }
+    }
   }
+
+  inner class BoletimTask: AsyncTask<Void, Void, List<Boletim?>>(){
+
+    override fun onPreExecute() {
+      super.onPreExecute()
+      showProgress(true)
+    }
+
+
+    override fun doInBackground(vararg params: Void?): List<Boletim>? {
+      return BoletimHttp.loadBoletim()
+    }
+
+    private fun updateBoletins(result: List<Boletim>?){
+      if(result != null){
+        listaBoletim.clear()
+        listaBoletim.addAll(result.reversed())
+      }else{
+        txtMsg.text = "Erro ao Carregar"
+      }
+      adapter.notifyDataSetChanged()
+      asyncTask = null
+    }
+
+    override fun onPostExecute(result: List<Boletim?>?) {
+      super.onPostExecute(result)
+      showProgress(false)
+      updateBoletins(result as List<Boletim>?)
+    }
+
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.menu, menu)
+    return super.onCreateOptionsMenu(menu)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+
+    R.id.menu_refresh -> {
+      CarregaDados()
+      true
+    }
+    else -> {
+      super.onOptionsItemSelected(item)
+    }
+  }
+
 }
