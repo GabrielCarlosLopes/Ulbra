@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CovidWorld</string>
+    <string name="escolha_uma_op_o">Escolha Uma Opção</string>
+    <string name="todos_estados">Todos Estados</string>
+    <string name="todos_os_pa_ses">Todos os Países</string>
+    <string name="casos">Casos</string>
+    <string name="mortes">Mortes</string>
+    <string name="suspeitos">Suspeitos</string>
+    <string name="descartados">Descartados</string>
+    <string name="confirmados">Confirmados</string>
+    <string name="curados">Curados</string>
+    <string name="digite_o_uf_de_algum_estado">Digite o UF de algum estado</string>
+</resources>
