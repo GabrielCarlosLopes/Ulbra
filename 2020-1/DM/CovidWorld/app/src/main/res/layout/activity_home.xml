@@ -36,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBar" />
 
     <Button
+        android:contentDescription="@string/bot_o_para_acessar_a_lista_com_todos_estados_brasileiros"
         android:id="@+id/btnAllStates"
         android:layout_width="355dp"
         android:layout_height="59dp"
@@ -48,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
+        android:contentDescription="@string/bot_o_para_acessar_a_lista_de_todos_os_pa_ses"
         android:id="@+id/btnAllCountry"
         android:layout_width="355dp"
         android:layout_height="59dp"
@@ -60,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnAllStates" />
 
     <EditText
+        android:contentDescription="@string/campo_para_digitar_o_uf_de_algum_estado_brasileiro"
         android:id="@+id/uf"
         android:layout_width="276dp"
         android:layout_height="47dp"
@@ -69,9 +72,11 @@
         android:hint="@string/digite_o_uf_de_algum_estado"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
+        android:contentDescription="@string/bot_o_para_pesquisar"
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

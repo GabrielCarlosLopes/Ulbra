@@ -9,7 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.lopes.covidworld.R
 import com.lopes.covidworld.all_states
 import kotlinx.android.synthetic.main.activity_home.*
-import java.io.IOException
+
 
 class HomeActivity : AppCompatActivity() {
 

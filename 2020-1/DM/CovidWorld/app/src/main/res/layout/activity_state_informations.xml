@@ -21,12 +21,12 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
+        android:contentDescription="@string/dia_do_boletim"
         android:id="@+id/dia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="68dp"
-        android:text="20"
         android:textColor="@color/secondaryDarkColor"
         android:textSize="50sp"
         app:layout_constraintEnd_toStartOf="@+id/mes"
@@ -35,23 +35,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:contentDescription="@string/m_s_do_boletim"
         android:id="@+id/mes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="132dp"
-        android:text="MAIO"
         android:textColor="@color/secondaryDarkColor"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:contentDescription="@string/hora_do_boletim"
         android:id="@+id/hora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="23:23"
         android:textColor="@color/secondaryDarkColor"
         android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/cidade"
@@ -60,11 +60,11 @@
         app:layout_constraintTop_toBottomOf="@+id/dia" />
 
     <TextView
+        android:contentDescription="@string/nome_do_estado"
         android:id="@+id/cidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
-        android:text="Mato Grosso do Sul"
         android:textColor="@color/secondaryDarkColor"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,13 +98,13 @@
                 android:textColor="@color/secondaryDarkColor"/>
 
             <TextView
+                android:contentDescription="@string/n_mero_de_casos"
                 android:id="@+id/casos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="10dp"
-                android:text="00000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -142,13 +142,13 @@
                 android:textColor="@color/secondaryDarkColor"/>
 
             <TextView
+                android:contentDescription="@string/n_mero_de_mortes"
                 android:id="@+id/mortes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="10dp"
-                android:text="00000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -186,13 +186,13 @@
                 android:textColor="@color/secondaryDarkColor"/>
 
             <TextView
+                android:contentDescription="@string/n_mero_de_suspeitos"
                 android:id="@+id/suspeitos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="10dp"
-                android:text="00000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -229,13 +229,13 @@
                 android:textColor="@color/secondaryDarkColor"/>
 
             <TextView
+                android:contentDescription="@string/n_mero_de_descartados"
                 android:id="@+id/descartados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="10dp"
-                android:text="00000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_all_states.*
 import kotlinx.android.synthetic.main.activity_all_states.appBar
 import kotlinx.android.synthetic.main.activity_state_informations.*
-import kotlinx.android.synthetic.main.item.*
 import kotlinx.android.synthetic.main.item.dia
 import kotlinx.android.synthetic.main.item.mes
 

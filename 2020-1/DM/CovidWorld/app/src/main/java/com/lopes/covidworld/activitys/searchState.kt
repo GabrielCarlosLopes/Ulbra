@@ -1,15 +1,16 @@
 package com.lopes.covidworld.activitys
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.RequiresApi
 import com.lopes.covidworld.R
 import com.lopes.covidworld.States
 import com.lopes.covidworld.ws.HttpUf
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_search_state.*
 
 class searchState : AppCompatActivity() {
@@ -21,6 +22,14 @@ class searchState : AppCompatActivity() {
         setContentView(R.layout.activity_search_state)
         uf = intent.getStringExtra("uf")
         CarregaDados()
+
+
+        appBarSearch.setNavigationOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val intent = Intent(this@searchState, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 
     fun CarregaDados(){

@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.view.View
 import com.lopes.covidworld.Countrys
 import com.lopes.covidworld.R
-import com.lopes.covidworld.States
-import com.lopes.covidworld.all_states
-import kotlinx.android.synthetic.main.activity_all_states.*
 import kotlinx.android.synthetic.main.activity_all_states.appBar
 import kotlinx.android.synthetic.main.activity_country_informations.*
 
