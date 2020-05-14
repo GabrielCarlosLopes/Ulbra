@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
+import com.lopes.covidworld.HttpAllStates
 import com.lopes.covidworld.States
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -28,7 +29,7 @@ object HttpUf {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun loadState(uf:String): ArrayList<States> {
+    fun loadState(uf:String): States? {
 
         val state = OkHttpClient.Builder()
             .readTimeout(5, TimeUnit.SECONDS)
@@ -36,46 +37,41 @@ object HttpUf {
             .build()
 
         val request = Request.Builder()
-            .url(url+"rs")
+            .url(url+uf)
             .build()
 
         val response = state.newCall(request).execute()
         val jsonString = response.body?.string()
 
-        val jsonObject = JSONObject(jsonString)
-        val jsonArray = jsonObject.getJSONArray("")
+        val json = JSONObject(jsonString)
 
-        return readState(jsonArray)
+        return readState(json)
 
 
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun readState(json: JSONArray) : ArrayList<States> {
-        val estados = arrayListOf<States>()
+    fun readState(json: JSONObject) : States? {
         try {
-            for (i in 0 .. json.length()-1) {
-                var js = json.getJSONObject(i)
 
-                val dia = formatarData(js.getString("datetime").substring(0,10))
-                val hora = js.getString("datetime").substring(11,16)
+            val dia = formatarData(json.getString("datetime").substring(0, 10))
+            val hora = json.getString("datetime").substring(11, 16)
 
-                var states = States(
-                    js.getString("state"),
-                    js.getInt("cases"),
-                    js.getInt("deaths"),
-                    js.getInt("suspects"),
-                    js.getInt("refuses"),
-                    dia,
-                    hora
-                )
-                estados.add(states)
-            }
-        }catch (e: IOException) {
+            var states = States(
+                json.getString("state"),
+                json.getInt("cases"),
+                json.getInt("deaths"),
+                json.getInt("suspects"),
+                json.getInt("refuses"),
+                dia,
+                hora
+            )
+
+            return states
+        } catch (e: IOException) {
             Log.e("Erro", "Impossivel ler JSON")
         }
-
-        return estados
+        return null
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

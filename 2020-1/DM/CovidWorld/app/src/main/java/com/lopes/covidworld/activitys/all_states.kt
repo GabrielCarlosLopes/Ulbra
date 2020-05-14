@@ -12,10 +12,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.lopes.covidworld.activitys.HomeActivity
 import kotlinx.android.synthetic.main.activity_all_states.*
-import kotlinx.android.synthetic.main.item.*
 
 class all_states : AppCompatActivity() {
 
