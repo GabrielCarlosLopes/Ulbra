@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
     <!-- Inicio Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -15,12 +15,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- Fim Bootstrap -->
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-sm col-12 header">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#">
-          <img src="img/page.jpg" alt="logo" style="width:200px;">
+          <img src="img/page.jpg" alt="logo">
         </a>
         <!-- Links -->
         <ul class="navbar-nav">
@@ -117,11 +120,11 @@
               <li class="nav-item allReports">
                 <a class="nav-link" href="#">
                   <div class="row">
-                    <div class="col-md-7 resume" >
+                    <div class="col-md-7 col-12 resume" >
                       <p>Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase.</p>
                       <h5>Flutter</h5>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-12">
                       <img src="./img/jornalista.jpg" class="rounded-circle img-thumbnail" alt="Foto do jornalista">
                     </div>
                   </div>
@@ -132,11 +135,11 @@
               <li class="nav-item allReports">
                 <a class="nav-link" href="#">
                   <div class="row">
-                    <div class="col-md-7 resume">
+                    <div class="col-md-7 col-12 resume">
                       <p>Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase.</p>
                       <h5>Flutter</h5>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-12">
                       <img src="./img/jornalista.jpg" class="rounded-circle img-thumbnail" alt="Foto do jornalista">
                     </div>
                   </div>
@@ -147,11 +150,11 @@
               <li class="nav-item allReports">
                 <a class="nav-link" href="#">
                   <div class="row">
-                    <div class="col-md-7 resume">
+                    <div class="col-md-7 col-12 resume">
                       <p>Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase.</p>
                       <h5>Flutter</h5>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-12">
                       <img src="./img/noticia.jpg" class="img-thumbnail" alt="Imagem sobre a noticia">
                     </div>
                   </div>
@@ -162,11 +165,11 @@
               <li class="nav-item allReports">
                 <a class="nav-link" href="#">
                   <div class="row">
-                    <div class="col-md-7 resume">
+                    <div class="col-md-7 col-12 resume">
                       <p>Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase.</p>
                       <h5>Flutter</h5>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-12">
                       <img src="./img/noticia.jpg" class="img-thumbnail" alt="Imagem sobre a noticia">
                     </div>
                   </div>
@@ -178,32 +181,51 @@
         </div>
       </section>
 
-      <div class="jumbotron">
-          <div class="row">
-            <div class="col-md-3">
-              <img src="img/page.jpg" alt="logo" style="width:300px;">
-            </div>
-            <div class="col-md-4">
-              <p>No Error 404 Page not found você encontra todo tipo de noticias sobre tenologias, do Brasil e do mundo, colunistas exclusivos e muitas outra coisas.</p>
-            </div>
-            <div class="col-md-2">
-              <p>(51)9 9999-9999</p>
-              <p>(51)9 9999-9999</p>
-            </div>
-            <div class="col-md-3">
-              <div class="col-md-12">
-                <a href="#">
-                  Facebook
-                </a>
-              </div>
-              <div class="col-md-12">
-                <a href="#">
-                  Facebook
-                </a>
-              </div>
-            </div>
-            
+      <div class="jumbotron" style="margin-bottom: 0px;">
+        <div class="row">
+          <div class="col-md-3 col-12">
+            <img src="img/page.jpg" alt="logo" style="width:300px;">
           </div>
-      </div>
+          <div class="col-md-4 col-12 infos">
+            <p>No Error 404 Page not found você encontra todo tipo de noticias sobre tenologias, do Brasil e do mundo, colunistas exclusivos e muitas outra coisas.</p>
+          </div>
+          <div class="col-md-2 col-12">
+            <div class="row contact">
+              <!-- Number 1 -->
+              <div class="col-md-10 col-10 number">
+                <p>(51)9 9999-9999</p>
+              </div>
+              <div class="col-md-2 col-2 icon-wpp">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+
+              <div class="col-md-10 col-10 number">
+                <p>(51)9 9999-9999</p>
+              </div>
+              <div class="col-md-2 col-2 icon-wpp">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <!-- Number 2 -->
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <div class="col-md-6 col-12 icons">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <div class="col-md-6 col-12 icons">
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+      
 </body>
 </html>
