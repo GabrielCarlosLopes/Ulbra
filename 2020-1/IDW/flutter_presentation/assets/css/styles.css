@@ -1,0 +1,65 @@
+body{
+    font-family: sans-serif;
+}
+
+
+.logoImage{
+    width: 10%;
+}
+
+nav{
+    justify-content: space-between !important;
+    background-color: white !important;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: #153396;
+    background-image: url(../images/image_presentation.png);
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.containerHeader{
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px 1px black;
+}
+
+.containerSet{
+    margin-top: 0px;
+}
+
+.containerHeader .imgHeader{
+    width: 30%;
+}
+
+.container{
+    padding: 20px;
+}
+
+.info{
+    display: flex;
+    flex: 1;
+    justify-content: space-around !important;
+    background-color: lightgreen;
+}
+
+.infos{
+    background-color: lightsalmon;
+}
+
+.info1{
+    background-color: lightseagreen;
+}
+
+.containerRound{
+    text-align: center;
+    border-radius: 50%;
+    background-color: black;
+}

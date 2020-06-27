@@ -1,0 +1,23 @@
+body{
+    background-color: #E3E6EF !important;
+}
+
+.container{
+    margin-top: 55px;
+    background-color: #A4B8EE;
+    border-radius: 12px;
+    text-align: center;
+    height: 400px;
+}
+
+.container img{
+    width: 15%;
+}
+
+.container input{
+    width: 80%;
+}
+
+#sexo{
+    width: 80%;
+}

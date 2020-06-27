@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- Inicio Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Fim Bootstrap -->
+
+    <!-- JS -->
+    <script src="script.js"></script>
+    <!-- Fim JS -->
+
+    <title>Calculo IMC</title>
+</head>
+<body>
+    <div class="col-md-6 col-12 container">
+        <img src="./assets/icons/balanca.png" alt="Icone de balanca">
+        <h3>Calculo IMC</h3>
+
+        <form>
+            <input type="text" placeholder="Nome" id="nome">
+            <span></span>
+            <select name="sexo" id="sexo">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="NaN">Prefiro não informar</option>
+            </select>
+            <span></span>
+            <input type="number" placeholder="Altura" id="altura">
+            <span></span>
+            <input type="number" placeholder="Peso" id="peso">
+        </form>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" id="button" onclick="calcImc()">Calcular</button>
+        <br>
+        <br>
+        <label for="result" id="result"></label>
+
+    </div>
+</body>
+</html>

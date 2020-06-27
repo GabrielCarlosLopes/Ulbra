@@ -5,15 +5,13 @@ body {
     line-height: 1.58;
 }
 
-.menu {
-    background-color: cadetblue;
-    color: white;
-    text-align: center;
+.nav-item a{
+    color: white !important;
     padding: 1.5rem;
 }
 
-.menu h1 {
-    margin: 0;
+.menu {
+    background-color: cadetblue;
 }
 
 .banner {
@@ -48,6 +46,11 @@ a:hover {
 }
 
 .format-text {
-    width: 500px;
     padding: 10px;
+}
+
+footer{
+    margin-bottom: 0 !important;
+    background-color: cadetblue !important;
+    color: white;
 }
