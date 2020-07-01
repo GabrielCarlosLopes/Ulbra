@@ -1,20 +1,13 @@
 package com.lopes.asgerenciadordeinvestimentos
 
-import android.annotation.SuppressLint
-import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.lopes.asgerenciadordeinvestimentos.API.Http
 import com.lopes.asgerenciadordeinvestimentos.Obejtos.Coin
-import com.lopes.asgerenciadordeinvestimentos.Obejtos.CoinHttp
-import kotlinx.android.synthetic.main.activity_ativos_list.*
 import kotlinx.android.synthetic.main.fragment_add.*
-import kotlinx.android.synthetic.main.item.*
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,21 +43,16 @@ class AddFragment : Fragment() {
 
     }
 
-    lateinit var coin : String
-    private var asyncTask : CoinTask? = null
-    private lateinit var valorCoin : CoinHttp
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-
         btc_card.setOnClickListener(View.OnClickListener {
             val coinDao = CoinDao(requireContext())
-            if(coinDao.getCoinName("BTC") == true){
+            if(coinDao.getCoinName("BTC")){
                 Toast.makeText(requireContext(), "Você ja tem esta moeda adicionada", Toast.LENGTH_LONG).show()
             }else{
-                val coin = Coin(null, "BTC", 1.00)
+                val coin = Coin(null, "BTC")
                 coinDao.insertCoin(coin)
                 Toast.makeText(requireContext(), "Adicionado com sucesso", Toast.LENGTH_SHORT).show()
             }
@@ -76,7 +64,7 @@ class AddFragment : Fragment() {
             if(coinDao.getCoinName("ETH") == true){
                 Toast.makeText(requireContext(), "Você ja tem esta moeda adicionada", Toast.LENGTH_LONG).show()
             }else{
-                val coin = Coin(null, "ETH", 1.00)
+                val coin = Coin(null, "ETH")
                 coinDao.insertCoin(coin)
                 Toast.makeText(requireContext(), "Adicionado com sucesso", Toast.LENGTH_SHORT).show()
             }
@@ -87,7 +75,7 @@ class AddFragment : Fragment() {
             if(coinDao.getCoinName("XRP") == true){
                 Toast.makeText(requireContext(), "Você ja tem esta moeda adicionada", Toast.LENGTH_LONG).show()
             }else{
-                val coin = Coin(null, "XRP", 1.00)
+                val coin = Coin(null, "XRP")
                 coinDao.insertCoin(coin)
                 Toast.makeText(requireContext(), "Adicionado com sucesso", Toast.LENGTH_SHORT).show()
             }
@@ -98,65 +86,25 @@ class AddFragment : Fragment() {
             if(coinDao.getCoinName("BCH") == true){
                 Toast.makeText(requireContext(), "Você ja tem esta moeda adicionada", Toast.LENGTH_LONG).show()
             }else{
-                val coin = Coin(null, "BCH", 1.00)
+                val coin = Coin(null, "BCH")
                 coinDao.insertCoin(coin)
                 Toast.makeText(requireContext(), "Adicionado com sucesso", Toast.LENGTH_SHORT).show()
             }
         })
+
+
 
         ltc_card.setOnClickListener(View.OnClickListener {
             val coinDao = CoinDao(requireContext())
             if(coinDao.getCoinName("LTC") == true){
                 Toast.makeText(requireContext(), "Você ja tem esta moeda adicionada", Toast.LENGTH_LONG).show()
             }else{
-                val coin = Coin(null, "LTC", 1.00)
+                val coin = Coin(null, "LTC")
                 coinDao.insertCoin(coin)
                 Toast.makeText(requireContext(), "Adicionado com sucesso", Toast.LENGTH_SHORT).show()
             }
         })
     }
-
-
-    fun CarregaDados() {
-        if(asyncTask==null){
-            if(Http.hasConnetcion(requireContext())){
-                if(asyncTask?.status != AsyncTask.Status.RUNNING){
-                    asyncTask = CoinTask()
-                    asyncTask?.execute()
-                }
-            }
-        }
-    }
-
-    
-    @SuppressLint("StaticFieldLeak")
-    inner class CoinTask: AsyncTask<Void, Void, CoinHttp?>(){
-
-        override fun onPreExecute() {
-            super.onPreExecute()
-        }
-
-
-        override fun doInBackground(vararg params: Void?): CoinHttp? {
-            return Http.loadCoin(coin)
-        }
-
-        private fun update(result: CoinHttp?){
-
-            if(result != null){
-                valorCoin.buy = result.buy
-            }
-            asyncTask = null
-        }
-
-        override fun onPostExecute(result: CoinHttp?) {
-            super.onPostExecute(result)
-            update(result as CoinHttp?)
-        }
-
-    }
-
-
 
 
     companion object {

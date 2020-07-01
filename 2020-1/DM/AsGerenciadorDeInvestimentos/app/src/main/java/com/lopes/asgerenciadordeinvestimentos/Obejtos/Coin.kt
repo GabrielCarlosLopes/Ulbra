@@ -3,18 +3,16 @@ package com.lopes.asgerenciadordeinvestimentos.Obejtos
 import android.os.Parcel
 import android.os.Parcelable
 
-class Coin(var idCoin: Int?, var coin: String?, var valorCoin: Double?):Parcelable {
+class Coin(var idCoin: Int?, var coin: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readValue(Double::class.java.classLoader) as? Double
+        parcel.readString()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(idCoin)
         parcel.writeString(coin)
-        parcel.writeValue(valorCoin)
     }
 
     override fun describeContents(): Int {

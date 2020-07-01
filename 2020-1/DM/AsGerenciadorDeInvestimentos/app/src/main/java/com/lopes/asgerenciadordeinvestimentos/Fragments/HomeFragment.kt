@@ -1,15 +1,21 @@
 package com.lopes.asgerenciadordeinvestimentos
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.lopes.asgerenciadordeinvestimentos.API.Http
 import com.lopes.asgerenciadordeinvestimentos.Obejtos.Coin
+import com.lopes.asgerenciadordeinvestimentos.Obejtos.CoinHttp
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item.*
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,28 +57,29 @@ class HomeFragment : Fragment() {
     }
 
 
+    @SuppressLint("SetTextI18n")
     private fun updateAdapter() {
         val appContext = context !!. applicationContext
         val coinDao = CoinDao(appContext)
         coinList.clear()
+        investimentosTotal.text = coinDao.getInvestimentos().toString()
         coinList = coinDao.getAllCoins()
         if (coinList.isEmpty()) {
             rvDados.visibility = View.GONE;
             txtMoeda.visibility = View.GONE;
-            txtValor.visibility = View.GONE;
             msgFree.visibility = View.VISIBLE;
             msgFree.text = "você nao tem nenhuma moeda ativada"
         }
         else {
             rvDados.visibility = View.VISIBLE;
             txtMoeda.visibility = View.VISIBLE;
-            txtValor.visibility = View.VISIBLE;
             msgFree.visibility = View.GONE;
         }
         rvDados.adapter?.notifyDataSetChanged()
+
+
+
     }
-
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

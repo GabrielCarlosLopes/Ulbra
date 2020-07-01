@@ -16,7 +16,6 @@ class CoinDao(context: Context) {
 
         contentValues.put(COIN_ID, coin.idCoin )
         contentValues.put(COIN, coin.coin)
-        contentValues.put(COIN_VALUE, coin.valorCoin)
 
         var resp_id=db.insert(TABLE_COIN, null, contentValues)
         val msg = if(resp_id!=-1L){
@@ -60,10 +59,26 @@ class CoinDao(context: Context) {
         return coins.size > 0
     }
 
+    fun getInvestimentos(): Double {
+        Log.v("LOG", "GetCoin")
+        var total : Double = 0.0
+        val db = banco.writableDatabase
+        val sql = "SELECT sum($ATIVO_VALOR*$ATIVO_QUANTIDADE) from $TABLE_ATIVOS"
+        val cursor = db.rawQuery(sql ,null)
+        while (cursor.moveToNext()){
+            total = cursor.getDouble(0)
+        }
+        cursor.close()
+        db.close()
+
+        return total
+    }
+
+
+
     private fun coinFromCursor(cursor: Cursor): Coin{
         val id = cursor.getInt(cursor.getColumnIndex(COIN_ID))
         val coinType = cursor.getString(cursor.getColumnIndex(COIN))
-        val coinValue = cursor.getDouble(cursor.getColumnIndex(COIN_VALUE))
-        return Coin(id,coinType,coinValue);
+        return Coin(id,coinType);
     }
 }

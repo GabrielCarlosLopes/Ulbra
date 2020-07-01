@@ -39,12 +39,12 @@ object Http {
 
         try {
             return CoinHttp(
-                json.getDouble("high"),
-                json.getDouble("low"),
-                json.getDouble("vol"),
-                json.getDouble("last"),
-                json.getDouble("buy"),
-                json.getDouble("sell")
+                json.getString("high"),
+                json.getString("low"),
+                json.getString("vol"),
+                json.getString("last"),
+                json.getString("buy"),
+                json.getString("sell")
             )
         }catch (e: IOException){
             Log.e("Error", "ERRO")

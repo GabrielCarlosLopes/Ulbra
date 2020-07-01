@@ -47,7 +47,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="51dp"
         android:gravity="center"
-        android:text="Nº de Moedas"
+        android:text="Nº de Itens"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonBack" />
@@ -66,9 +66,9 @@
 
     <TextView
         android:id="@+id/totalValue"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="120dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="$100000"
@@ -87,4 +87,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDados"
+        android:layout_width="407dp"
+        android:layout_height="464dp"
+        android:layout_marginTop="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/msgFreeListAtivo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/status"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvDados"
+        app:layout_constraintStart_toEndOf="@+id/totalValue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_arrow_drop_up_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

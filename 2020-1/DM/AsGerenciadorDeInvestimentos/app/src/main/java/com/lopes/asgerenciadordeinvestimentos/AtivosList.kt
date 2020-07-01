@@ -1,12 +1,28 @@
 package com.lopes.asgerenciadordeinvestimentos
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
+import com.lopes.asgerenciadordeinvestimentos.API.Http
+import com.lopes.asgerenciadordeinvestimentos.Obejtos.Coin
+import com.lopes.asgerenciadordeinvestimentos.Obejtos.CoinHttp
+import kotlinx.android.synthetic.main.activity_add_compra.*
 import kotlinx.android.synthetic.main.activity_ativos_list.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.item2.*
+import kotlinx.android.synthetic.main.activity_ativos_list.rvDados as rvDados1
 
 class AtivosList : AppCompatActivity() {
+
+    private var asyncTask : tesk? = null
+    lateinit var nameForUpdate: String
+    private var ativoList = mutableListOf<Ativo>()
+    lateinit var teste : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ativos_list)
@@ -15,18 +31,26 @@ class AtivosList : AppCompatActivity() {
 
         nameCoin.text = name
 
-        if(name == "BTC"){
-            imgMoedaAdd.setImageResource(R.drawable.bitcoin)
-        }else if(name == "ETH") {
-            imgMoedaAdd.setImageResource(R.drawable.ethereum)
-        }else if(name == "XRP") {
-            imgMoedaAdd.setImageResource(R.drawable.xrp)
-        }else if(name == "BCH") {
-            imgMoedaAdd.setImageResource(R.drawable.bcash)
-        }else if(name == "LTC") {
-            imgMoedaAdd.setImageResource(R.drawable.litecoin)
+        when (name) {
+            "BTC" -> {
+                imgMoedaAdd.setImageResource(R.drawable.bitcoin)
+            }
+            "ETH" -> {
+                imgMoedaAdd.setImageResource(R.drawable.ethereum)
+            }
+            "XRP" -> {
+                imgMoedaAdd.setImageResource(R.drawable.xrp)
+            }
+            "BCH" -> {
+                imgMoedaAdd.setImageResource(R.drawable.bcash)
+            }
+            "LTC" -> {
+                imgMoedaAdd.setImageResource(R.drawable.litecoin)
+            }
         }
 
+        updateAdapter()
+        initRecyclerView()
 
         buttonAddAtivo.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, addCompra::class.java)
@@ -42,4 +66,98 @@ class AtivosList : AppCompatActivity() {
         })
 
     }
+
+
+
+
+    @SuppressLint("SetTextI18n")
+    private fun updateAdapter() {
+        val ativoDao = AtivoDao(this)
+        teste = "aa"
+        nameForUpdate = intent.getStringExtra("name")
+        CarregaDados()
+        Log.e("LOG", "SERAA"+teste)
+        ativoList.clear()
+        totalValue.text = ativoDao.getAllValueAtivo(nameForUpdate).toString()
+        ativoList.clear()
+        ativoList = ativoDao.getAllAtivos(nameForUpdate)
+        if (ativoList.isEmpty()) {
+            rvDados.visibility = View.GONE
+            nMoedas.text = ativoList.size.toString()
+            msgFreeListAtivo.visibility = View.VISIBLE;
+            msgFreeListAtivo.text = "Você nao tem nenhum ativo adicionado"
+            status.visibility = View.GONE
+        }
+        else {
+            if(ativoDao.getAllValueAtivo(nameForUpdate) > 10000){
+                status.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
+            }else{
+                status.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
+            }
+            rvDados.visibility = View.VISIBLE
+            nMoedas.text = ativoList.size.toString()
+            msgFreeListAtivo.visibility = View.GONE;
+        }
+        rvDados.adapter?.notifyDataSetChanged()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateAdapter()
+        initRecyclerView()
+    }
+
+
+    private fun initRecyclerView() {
+        val adapter2 = AdapterListAtivos(ativoList)
+        rvDados.adapter = adapter2
+        val layout = GridLayoutManager(this, 1)
+        rvDados.layoutManager = layout
+    }
+
+
+    fun CarregaDados() {
+        if(asyncTask==null) {
+            if(Http.hasConnetcion(this)){
+                if (asyncTask?.status != AsyncTask.Status.RUNNING) {
+                    asyncTask = tesk()
+                    asyncTask?.execute()
+                }
+            }
+        }
+    }
+
+
+    inner class tesk: AsyncTask<Void, Void, CoinHttp?>(){
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+        }
+
+
+        override fun doInBackground(vararg params: Void?): CoinHttp? {
+            return Http.loadCoin(nameForUpdate)
+        }
+
+        private fun update(result: CoinHttp?) {
+
+            if (result != null) {
+                teste = result.buy.toString()
+            }
+
+            Log.e("LOG", "TESTE " + result)
+
+
+            asyncTask = null
+        }
+
+
+        override fun onPostExecute(result: CoinHttp?) {
+            super.onPostExecute(result)
+            update(result as CoinHttp)
+        }
+
+    }
+
+
 }

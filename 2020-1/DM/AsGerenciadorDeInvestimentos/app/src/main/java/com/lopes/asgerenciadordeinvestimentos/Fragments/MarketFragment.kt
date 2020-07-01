@@ -1,10 +1,15 @@
 package com.lopes.asgerenciadordeinvestimentos
 
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.lopes.asgerenciadordeinvestimentos.API.Http
+import com.lopes.asgerenciadordeinvestimentos.Obejtos.CoinHttp
+import kotlinx.android.synthetic.main.fragment_market.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +40,76 @@ class MarketFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_market, container, false)
+    }
+
+    fun CarregaDados() {
+        if(asyncTask==null) {
+            if(Http.hasConnetcion(requireContext())){
+                if (asyncTask?.status != AsyncTask.Status.RUNNING) {
+                    asyncTask = tesk()
+                    asyncTask?.execute()
+                }
+            }
+        }
+    }
+
+
+    inner class tesk: AsyncTask<Void, Void, CoinHttp?>(){
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+        }
+
+
+        override fun doInBackground(vararg params: Void?): CoinHttp? {
+            return Http.loadCoin(nameForUpdate)
+        }
+
+        private fun update(result: CoinHttp?) {
+
+            if (result != null) {
+                when (nameForUpdate) {
+                    "BTC" -> {
+                        valorBTCForText = result.buy.toDouble().toString()
+                    }
+                    "ETH" -> {
+                        valorETH.text = result.buy.toDouble().toString()
+                    }
+                    "XRP" -> {
+                        valorXRP.text = result.buy.toDouble().toString()
+                    }
+                    "BCH" -> {
+                        valorBCH.text = result.buy.toDouble().toString()
+                    }
+                    "LTC" -> {
+                        valorLTC.text = result.buy.toDouble().toString()
+                    }
+                }
+            }
+
+            Log.e("LOG", "TESTE " + result)
+
+
+            asyncTask = null
+        }
+
+
+        override fun onPostExecute(result: CoinHttp?) {
+            super.onPostExecute(result)
+            update(result as CoinHttp)
+        }
+
+    }
+
+
+    private var asyncTask : tesk? = null
+    lateinit var nameForUpdate: String
+    var valorBTCForText : String? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        nameForUpdate = "BTC"
+        CarregaDados()
+        valorBTC.text = valorBTCForText
     }
 
     companion object {

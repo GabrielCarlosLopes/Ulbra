@@ -5,7 +5,6 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
-import com.lopes.asgerenciadordeinvestimentos.Obejtos.Coin
 
 
 class AtivoDao(context: Context) {
@@ -36,34 +35,16 @@ class AtivoDao(context: Context) {
         return msg
     }
 
-    fun update(ativo: Ativo):
-            Boolean {
-        val db = banco.writableDatabase
-        val contentValues = ContentValues()
-        contentValues.put(ATIVO_ID, ativo.id)
-        contentValues.put(ATIVO_DATA, ativo.data)
-        contentValues.put(ATIVO_QUANTIDADE, ativo.quantidade)
-        contentValues.put(ATIVO_VALOR, ativo.valorMoeda)
-        contentValues.put(ATIVO_TIPO, ativo.tipoMoeda)
-        //db.update()
-
-
-        db.insertWithOnConflict(TABLE_ATIVOS,null,contentValues,SQLiteDatabase.CONFLICT_REPLACE)
-        db.close()
-
-        return true
-    }
-
 
     fun remove(ativo: Ativo) : Int {
         val db = banco.writableDatabase
         return db.delete(TABLE_ATIVOS,"ID =?", arrayOf(ativo.id.toString()))
     }
 
-    fun getAllAtivos(): ArrayList<Ativo>{
+    fun getAllAtivos(tipo: String?): ArrayList<Ativo>{
         Log.v("LOG", "GetAll")
         val db = banco.writableDatabase
-        val  sql = "SELECT * from "+ TABLE_ATIVOS
+        val  sql = "SELECT * from $TABLE_ATIVOS WHERE $ATIVO_TIPO like '%$tipo'"
         val cursor = db.rawQuery(sql, null)
         val ativos = ArrayList<Ativo>()
         while (cursor.moveToNext()){
@@ -75,6 +56,23 @@ class AtivoDao(context: Context) {
         Log.v("LOG", "Get ${ativos.size}")
         return ativos
     }
+
+    fun getAllValueAtivo(name: String): Double {
+        Log.v("LOG", "GetCoin")
+        var total : Double = 0.0
+        val db = banco.writableDatabase
+        val sql = "SELECT sum($ATIVO_VALOR*$ATIVO_QUANTIDADE) from $TABLE_ATIVOS WHERE $ATIVO_TIPO like '%$name%'"
+        val cursor = db.rawQuery(sql ,null)
+        while (cursor.moveToNext()){
+            total = cursor.getDouble(0)
+        }
+        cursor.close()
+        db.close()
+
+        return total
+    }
+
+
 
     private fun ativoFromCursor(cursor: Cursor): Ativo{
         val id = cursor.getInt(cursor.getColumnIndex(ATIVO_ID))
