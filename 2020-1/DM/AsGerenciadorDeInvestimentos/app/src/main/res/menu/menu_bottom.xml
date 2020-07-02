@@ -10,8 +10,4 @@
         android:icon="@drawable/adicionar"
         android:title="@string/adicionar" />
 
-    <item
-        android:id="@+id/market"
-        android:icon="@drawable/crescimento"
-        android:title="@string/mercado" />
 </menu>

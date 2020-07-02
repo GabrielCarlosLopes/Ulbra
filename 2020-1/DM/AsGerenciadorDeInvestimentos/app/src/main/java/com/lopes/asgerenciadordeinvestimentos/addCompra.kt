@@ -74,7 +74,7 @@ class addCompra : AppCompatActivity() {
 
             Log.e("LOG", "TESTE " + result)
             if (result != null) {
-                valor_moeda.text = result.buy?.toDouble().toString()
+                valor_moeda.text = result.buy.toDouble().toString()
             }
 
             asyncTask = null

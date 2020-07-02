@@ -73,12 +73,10 @@ class AtivosList : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun updateAdapter() {
         val ativoDao = AtivoDao(this)
-        teste = "aa"
         nameForUpdate = intent.getStringExtra("name")
         CarregaDados()
-        Log.e("LOG", "SERAA"+teste)
         ativoList.clear()
-        totalValue.text = ativoDao.getAllValueAtivo(nameForUpdate).toString()
+        totalValue.text = ativoDao.getAllValueAtivo(nameForUpdate)
         ativoList.clear()
         ativoList = ativoDao.getAllAtivos(nameForUpdate)
         if (ativoList.isEmpty()) {
@@ -86,14 +84,8 @@ class AtivosList : AppCompatActivity() {
             nMoedas.text = ativoList.size.toString()
             msgFreeListAtivo.visibility = View.VISIBLE;
             msgFreeListAtivo.text = "Você nao tem nenhum ativo adicionado"
-            status.visibility = View.GONE
         }
         else {
-            if(ativoDao.getAllValueAtivo(nameForUpdate) > 10000){
-                status.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
-            }else{
-                status.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
-            }
             rvDados.visibility = View.VISIBLE
             nMoedas.text = ativoList.size.toString()
             msgFreeListAtivo.visibility = View.GONE;
@@ -139,10 +131,11 @@ class AtivosList : AppCompatActivity() {
             return Http.loadCoin(nameForUpdate)
         }
 
+
         private fun update(result: CoinHttp?) {
 
             if (result != null) {
-                teste = result.buy.toString()
+
             }
 
             Log.e("LOG", "TESTE " + result)
@@ -155,6 +148,7 @@ class AtivosList : AppCompatActivity() {
         override fun onPostExecute(result: CoinHttp?) {
             super.onPostExecute(result)
             update(result as CoinHttp)
+
         }
 
     }

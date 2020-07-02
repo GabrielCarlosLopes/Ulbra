@@ -28,20 +28,17 @@ class MainActivity : AppCompatActivity() {
 
 
     private val mOnNavigationItemSelectedListener =  BottomNavigationView.OnNavigationItemSelectedListener {
-        when(it.itemId){
-            R.id.home -> {
-                val home = HomeFragment.newInstance(null, null)
-                open(home)
-            }
-            R.id.add -> {
+        val b = (if (it.itemId == R.id.home) {
+            val home = HomeFragment.newInstance(null, null)
+            open(home)
+        } else {
+            if (it.itemId != R.id.add) {
+            } else {
                 val add = AddFragment.newInstance(null, null)
                 open(add)
             }
-            else -> {
-                val market = MarketFragment.newInstance(null, null)
-                open(market)
-            }
-        }
+        }) as Boolean
+        b
     }
 
     private fun open(frag: Fragment):Boolean{

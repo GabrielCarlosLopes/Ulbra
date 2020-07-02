@@ -28,7 +28,7 @@ class AdapterListAtivos(private val ativos: List<Ativo>): RecyclerView.Adapter<A
     override fun onBindViewHolder(holder: VH, position: Int) {
         var ativo = ativos[position]
         holder.qtdAtivo.text = ativo.quantidade.toString()
-        holder.valorTotalAtivo.text = (ativo.quantidade?.times(ativo.valorMoeda!!)).toString()
+        holder.valorTotalAtivo.text = (ativo.quantidade?.times(ativo.valorMoeda!!))?.toDouble().toString()
 
         holder.deleteButton.setOnClickListener(View.OnClickListener {
                 val ativoDao = AtivoDao(it.context)

@@ -57,7 +57,7 @@ class AtivoDao(context: Context) {
         return ativos
     }
 
-    fun getAllValueAtivo(name: String): Double {
+    fun getAllValueAtivo(name: String): String {
         Log.v("LOG", "GetCoin")
         var total : Double = 0.0
         val db = banco.writableDatabase
@@ -65,6 +65,21 @@ class AtivoDao(context: Context) {
         val cursor = db.rawQuery(sql ,null)
         while (cursor.moveToNext()){
             total = cursor.getDouble(0)
+        }
+        cursor.close()
+        db.close()
+
+        return total.toString()
+    }
+
+    fun getAll(name: String): Int {
+        Log.v("LOG", "GetCoin")
+        var total : Int = 0
+        val db = banco.writableDatabase
+        val sql = "SELECT sum($ATIVO_QUANTIDADE) from $TABLE_ATIVOS WHERE $ATIVO_TIPO like '%$name%'"
+        val cursor = db.rawQuery(sql ,null)
+        while (cursor.moveToNext()){
+            total = cursor.getInt(0)
         }
         cursor.close()
         db.close()
