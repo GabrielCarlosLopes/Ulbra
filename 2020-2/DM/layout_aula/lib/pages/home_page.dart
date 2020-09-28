@@ -10,8 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int dropdownValue = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

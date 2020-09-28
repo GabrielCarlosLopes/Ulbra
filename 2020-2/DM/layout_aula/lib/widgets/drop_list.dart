@@ -13,9 +13,10 @@ class _DropListState extends State<DropList> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(width: 1, color: Colors.black38),
-          borderRadius: BorderRadius.circular(7),
-          color: Colors.white),
+        border: Border.all(width: 1, color: Colors.black38),
+        borderRadius: BorderRadius.circular(7),
+        color: Colors.white,
+      ),
       child: DropdownButton<String>(
           isExpanded: true,
           value: dropdownValue,
@@ -23,7 +24,7 @@ class _DropListState extends State<DropList> {
           icon: Icon(Icons.arrow_drop_down),
           iconSize: 35,
           underline: Container(
-            height: 0,
+            color: Colors.transparent
           ),
           onChanged: (String newValue) {
             setState(() {

@@ -29,7 +29,7 @@ class HeaderApp extends StatelessWidget {
         ),
         Padding(
               padding: const EdgeInsets.only(
-                  top: 10, right: 20, left: 20, bottom: 20),
+                  top: 10, right: 20, left: 20, bottom: 15),
               child: DropList(),
             ),
       ],

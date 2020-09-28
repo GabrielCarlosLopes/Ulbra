@@ -3,12 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class BodyApp extends StatefulWidget {
-  @override
-  _BodyAppState createState() => _BodyAppState();
-}
-
-class _BodyAppState extends State<BodyApp> {
+class BodyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> cards = [
@@ -22,6 +17,7 @@ class _BodyAppState extends State<BodyApp> {
       cardAula(Colors.indigoAccent, '5555', '28%', 0.28,
           'Modelagem de Software', context)
     ];
+
     return Expanded(
       child: ListView.builder(
         itemCount: cards.length,
@@ -33,8 +29,17 @@ class _BodyAppState extends State<BodyApp> {
   }
 }
 
-Widget cardAula(Color colorCard, String nRoom, String percent,
-    double percentRadius, String course, BuildContext context) {
+Widget cardAula(
+  Color colorCard,
+  String nRoom,
+  String percent,
+  double percentRadius,
+  String course,
+  BuildContext context,
+) {
+
+  final _widthPhone = MediaQuery.of(context).size.width;
+
   return Padding(
     padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
     child: Container(
@@ -58,7 +63,7 @@ Widget cardAula(Color colorCard, String nRoom, String percent,
                 child: Row(
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width / 1.8,
+                      width: _widthPhone / 1.9,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -158,7 +163,7 @@ Widget cardAula(Color colorCard, String nRoom, String percent,
                         ],
                       ),
                       Container(
-                        width: 340,
+                        width: _widthPhone / 1.3,
                         child: RaisedButton(
                           onPressed: () {},
                           color: Colors.green,
