@@ -20,6 +20,7 @@ class _ProductDetailState extends State<ProductDetail> {
   ItemList item;
   String dropdownValue = 'un';
   double price = 0.0;
+  int amountInitial = 0;
 
   TextEditingController productNameController = TextEditingController();
   TextEditingController amountController = TextEditingController();
@@ -32,6 +33,7 @@ class _ProductDetailState extends State<ProductDetail> {
     super.initState();
     dropdownValue = item.type == null ? 'un' : item.type;
     price = item.price == null ? 0.0 : item.price;
+    amountInitial = item.amount == null ? 0 : item.amount;
     _updateType();
     _updatePrice();
   }
@@ -52,11 +54,13 @@ class _ProductDetailState extends State<ProductDetail> {
   }
 
   void _updateAmount() {
-    item.amount = int.tryParse(amountController.text);
-    if (item.type == 'dz') {
-      item.price = price * (item.amount * 6);
-    } else {
-      item.price = price * item.amount;
+    if (amountInitial != int.tryParse(amountController.text)) {
+      item.amount = int.tryParse(amountController.text);
+      if (item.type == 'dz') {
+        item.price = (price / (amountInitial * 12)) * (item.amount * 12);
+      } else {
+        item.price = (price / amountInitial) * item.amount;
+      }
     }
   }
 
@@ -78,6 +82,7 @@ class _ProductDetailState extends State<ProductDetail> {
       result = await helper.updateProduct(item);
     } else {
       // Caso 2: Inserir
+      item.price = 0.0;
       result = await helper.insertProduct(item);
     }
 
@@ -89,7 +94,6 @@ class _ProductDetailState extends State<ProductDetail> {
       _showAlertDialog('Status', 'Eita nóis');
     }
   }
-
 
   void _showAlertDialog(String title, String message) {
     AlertDialog alertDialog = AlertDialog(
@@ -106,10 +110,21 @@ class _ProductDetailState extends State<ProductDetail> {
       iconEnabledColor: Colors.deepPurple,
       elevation: 16,
       onChanged: (String newValue) {
-        setState(() {
-          dropdownValue = newValue;
-          _updateType();
-        });
+        setState(
+          () {
+            if (newValue == 'dz') {
+              item.price = (price / amountInitial) * (item.amount * 12);
+            } else {
+              if (dropdownValue == 'dz') {
+                item.price = ((price / (amountInitial * 12)) * item.amount);
+              } else {
+                item.price = price * item.amount;
+              }
+            }
+            dropdownValue = newValue;
+            _updateType();
+          },
+        );
       },
       items: <String>[
         'un',

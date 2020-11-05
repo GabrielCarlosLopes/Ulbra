@@ -34,15 +34,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Row(
-          children: [
-            Icon(
-              Icons.shopping_cart,
-            ),
-            Text(
-              'Total das compras: R\$$totalPrice',
-            )
-          ],
+        title: Text(
+          'Lista de Compras',
         ),
         actions: [
           IconButton(
@@ -55,7 +48,40 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: getMyList(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            getMyList(),
+            Positioned(
+              top: MediaQuery.of(context).size.height / 2,
+              child: Container(
+                height: 38,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.deepPurple,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.shopping_cart,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      Text(
+                        'Total das compras: R\$$totalPrice' + '0',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           navigateToDetail(
@@ -74,125 +100,103 @@ class _HomePageState extends State<HomePage> {
       child: ListView.builder(
         itemCount: productList.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Alert(
-                  context: context,
-                  title: "Preço",
-                  content: Column(
-                    children: <Widget>[
-                      TextField(
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.account_circle),
-                          labelText: 'Username',
-                        ),
-                      ),
-                    ],
+          return Card(
+            elevation: 5,
+            child: Slidable(
+              actionPane: SlidableDrawerActionPane(),
+              actionExtentRatio: 0.25,
+              child: Container(
+                color: Colors.white,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Image.asset(
+                      'lib/assets/sacola_de_compras.png',
+                      fit: BoxFit.cover,
+                      height: 20,
+                    ),
+                    foregroundColor: Colors.white,
                   ),
-                  buttons: [
-                    DialogButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text(
-                        "Salvar",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    )
-                  ]).show();
-            },
-            child: Card(
-              elevation: 5,
-              child: Slidable(
-                actionPane: SlidableDrawerActionPane(),
-                actionExtentRatio: 0.25,
-                child: Container(
-                  color: Colors.white,
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.deepPurple,
-                      child: Image.asset(
-                        'lib/assets/sacola_de_compras.png',
-                        fit: BoxFit.cover,
-                        height: 20,
-                      ),
-                      foregroundColor: Colors.white,
-                    ),
-                    title: Text(productList[index].nameProduct),
-                    subtitle: Text(
-                      'Quantidade: ' +
-                          productList[index].amount.toString() +
-                          ' ' +
-                          productList[index].type +
-                          ' = ' +
-                          'R\$ ' +
-                          productList[index].price.toString(),
-                    ),
+                  title: Text(productList[index].nameProduct),
+                  subtitle: Text(
+                    'Quantidade: ' +
+                        productList[index].amount.toString() +
+                        ' ' +
+                        productList[index].type +
+                        ' = ' +
+                        'R\$ ' +
+                        productList[index].price.toString(),
                   ),
                 ),
-                actions: [
-                  IconSlideAction(
-                    caption: 'Preço',
-                    color: Colors.green,
-                    icon: Icons.add,
-                    onTap: () {
-                      Alert(
-                          context: context,
-                          title: "Adicionar Preço",
-                          content: Column(
-                            children: <Widget>[
-                              TextField(
-                                controller: priceController,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _updatePrice(productList[index]);
-                                    total();
-                                  });
-                                },
-                                decoration: InputDecoration(
-                                    icon: Icon(Icons.payment),
-                                    labelText: 'Preço'),
-                              ),
-                            ],
-                          ),
-                          buttons: [
-                            DialogButton(
-                              onPressed: () {
-                                _priceAtualize(productList[index]);
-                                updateListView();
-                                Navigator.pop(context);
-                              },
-                              child: Text(
-                                "Atualizar",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
-                              ),
-                            )
-                          ]).show();
-                    },
-                  ),
-                ],
-                secondaryActions: [
-                  IconSlideAction(
-                    caption: 'Editar',
-                    color: Colors.black45,
-                    icon: Icons.more_horiz,
-                    onTap: () => navigateToDetail(productList[index]),
-                  ),
-                  IconSlideAction(
-                    caption: 'Deletar',
-                    color: Colors.red,
-                    icon: Icons.delete,
-                    onTap: () {
-                      setState(
-                        () {
-                          _lastRemoved = productList[index];
-                          _delete(context, productList[index]);
-                          updateListView();
-                        },
-                      );
-                    },
-                  ),
-                ],
               ),
+              actions: [
+                IconSlideAction(
+                  caption: 'Preço',
+                  color: Colors.green,
+                  icon: Icons.add,
+                  onTap: () {
+                    Alert(
+                      context: context,
+                      title: "Adicionar Preço",
+                      content: Column(
+                        children: <Widget>[
+                          TextField(
+                            keyboardType: TextInputType.number,
+                            controller: priceController,
+                            onChanged: (value) {
+                              setState(() {
+                                _updatePrice(productList[index]);
+                                total();
+                              });
+                            },
+                            decoration: InputDecoration(
+                                icon: Icon(Icons.payment), labelText: 'Preço'),
+                          ),
+                        ],
+                      ),
+                      buttons: [
+                        DialogButton(
+                          onPressed: () {
+                            _priceAtualize(productList[index]);
+                            updateListView();
+                            priceController.text = '';
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            "Atualizar",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                        )
+                      ],
+                    ).show();
+                  },
+                ),
+              ],
+              secondaryActions: [
+                IconSlideAction(
+                  caption: 'Editar',
+                  color: Colors.black45,
+                  icon: Icons.more_horiz,
+                  onTap: () => navigateToDetail(productList[index]),
+                ),
+                IconSlideAction(
+                  caption: 'Deletar',
+                  color: Colors.red,
+                  icon: Icons.delete,
+                  onTap: () {
+                    setState(
+                      () {
+                        _lastRemoved = productList[index];
+                        _delete(context, productList[index]);
+                        updateListView();
+                      },
+                    );
+                  },
+                ),
+              ],
             ),
           );
         },
@@ -202,9 +206,15 @@ class _HomePageState extends State<HomePage> {
 
   void total() async {
     var total = (await _databaseHelper.getAllTotalPurchases())[0]['total'];
-    setState(() {
-      this.totalPrice = total.toString();
-    });
+    setState(
+      () {
+        if (total.toString() != 'null') {
+          this.totalPrice = total.toString();
+        } else {
+          this.totalPrice = '0.0';
+        }
+      },
+    );
   }
 
   void updateListView() {
@@ -279,7 +289,7 @@ class _HomePageState extends State<HomePage> {
 
   void _updatePrice(ItemList item) {
     if (item.type == 'dz') {
-      item.price = (double.tryParse(priceController.text)) * (item.amount * 6);
+      item.price = (double.tryParse(priceController.text)) * (item.amount * 12);
     } else {
       item.price = double.tryParse(priceController.text) * item.amount;
     }

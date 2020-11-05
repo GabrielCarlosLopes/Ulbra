@@ -91,11 +91,11 @@ class DatabaseHelper {
   //Get total de valores
   Future<List<Map<String, dynamic>>> getAllTotalPurchases() async {
     Database db = await this.database;
-    var result = db.rawQuery("SELECT SUM($colPrice) as total FROM $comprasTable");
-    
+    var result =
+        db.rawQuery("SELECT SUM($colPrice) as total FROM $comprasTable;");
+
     return result;
   }
-  
 
   // Get todos elementos
   Future<List<ItemList>> getItensList() async {
