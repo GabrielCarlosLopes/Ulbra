@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:lista_de_compras/src/model/item_list.dart';
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   ItemList _lastRemoved;
 
-  TextEditingController priceController = TextEditingController();
+  MoneyMaskedTextController priceController = MoneyMaskedTextController();
 
   @override
   void initState() {
@@ -48,40 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            getMyList(),
-            Positioned(
-              top: MediaQuery.of(context).size.height / 2,
-              child: Container(
-                height: 38,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.deepPurple,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.shopping_cart,
-                        color: Colors.white,
-                        size: 28,
-                      ),
-                      Text(
-                        'Total das compras: R\$$totalPrice' + '0',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: getMyList(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           navigateToDetail(
@@ -91,12 +59,36 @@ class _HomePageState extends State<HomePage> {
         tooltip: '+ 1 produto',
         child: Icon(Icons.add),
       ),
+      bottomSheet: Container(
+        height: 60,
+        width: double.infinity,
+        color: Colors.deepPurple,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            children: [
+              Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+                size: 28,
+              ),
+              Text(
+                'Total das compras: R\$$totalPrice',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 
   Widget getMyList() {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.25,
+      height: (MediaQuery.of(context).size.height - 145),
       child: ListView.builder(
         itemCount: productList.length,
         itemBuilder: (context, index) {
@@ -125,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                         productList[index].type +
                         ' = ' +
                         'R\$ ' +
-                        productList[index].price.toString(),
+                        productList[index].price.toStringAsFixed(2),
                   ),
                 ),
               ),
@@ -150,7 +142,11 @@ class _HomePageState extends State<HomePage> {
                               });
                             },
                             decoration: InputDecoration(
-                                icon: Icon(Icons.payment), labelText: 'Preço'),
+                              icon: Icon(
+                                Icons.payment,
+                              ),
+                              labelText: 'Preço',
+                            ),
                           ),
                         ],
                       ),
@@ -159,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             _priceAtualize(productList[index]);
                             updateListView();
-                            priceController.text = '';
+                            priceController.text = '0,00';
                             Navigator.pop(context);
                           },
                           child: Text(
@@ -209,9 +205,9 @@ class _HomePageState extends State<HomePage> {
     setState(
       () {
         if (total.toString() != 'null') {
-          this.totalPrice = total.toString();
+          this.totalPrice = total.toStringAsFixed(2);
         } else {
-          this.totalPrice = '0.0';
+          this.totalPrice = '0.00';
         }
       },
     );
@@ -253,6 +249,7 @@ class _HomePageState extends State<HomePage> {
       setState(
         () {
           final snack = SnackBar(
+            behavior: SnackBarBehavior.floating,
             content: Text('${_lastRemoved.nameProduct} Removida(o)'),
             action: SnackBarAction(
               label: 'Desfazer',
@@ -289,9 +286,15 @@ class _HomePageState extends State<HomePage> {
 
   void _updatePrice(ItemList item) {
     if (item.type == 'dz') {
-      item.price = (double.tryParse(priceController.text)) * (item.amount * 12);
+      item.price = (double.parse(
+                  priceController.text.replaceAll(new RegExp(r'[,.]'), '')) /
+              100) *
+          (item.amount * 12);
     } else {
-      item.price = double.tryParse(priceController.text) * item.amount;
+      item.price = (double.parse(
+                  priceController.text.replaceAll(new RegExp(r'[,.]'), '')) /
+              100) *
+          item.amount;
     }
   }
 }
