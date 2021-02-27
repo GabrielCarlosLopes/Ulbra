@@ -15,7 +15,11 @@ export default function SearchBar(props) {
       }
     })
       .then(function (response) {
-        props.handle(response.data);
+        if(response.data.length === 0){
+          alert('Nenhum resultado encontrado');
+        }else{
+          props.handle(response.data);
+        }
       })
   }
 

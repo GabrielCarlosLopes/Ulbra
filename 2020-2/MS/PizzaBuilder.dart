@@ -55,7 +55,8 @@ class Pizza {
 
   @override
   String toString() {
-    return "Uma deliciosa pizza de $_diametro\ cm com borda de $_borda e coberta de $coberturas";
+    return "Uma deliciosa pizza de $_diametro\ " +
+        "cm com borda de $_borda e coberta de $coberturas";
   }
 }
 
@@ -67,11 +68,13 @@ void main() {
 
   var plainPizza = Pizza(pizzaBuilder);
   print(plainPizza);
+  // Uma deliciosa pizza de 8 cm com borda de catupiri e coberta de calabresa e queijo
 
   pizzaBuilder.borda = "catupiri";
   pizzaBuilder.diametro = 15;
   pizzaBuilder.coberturas = Set.from(["calabresa", "4 queijos", "chocolate"]);
 
-  var pizzaEspecial = pizzaBuilder.build();
+  var pizzaEspecial = Pizza(pizzaBuilder);
   print(pizzaEspecial);
+  // Uma deliciosa pizza de 15 cm com borda de catupiri e coberta de calabresa, 4 queijos, chocolate, e queijo
 }

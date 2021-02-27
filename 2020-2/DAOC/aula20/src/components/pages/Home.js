@@ -8,7 +8,6 @@ function Home() {
         Api.get('/pages/1')
             .then((response) => {
                 setPage(response.data)
-                console.log(response)
             })
     }, []);
 

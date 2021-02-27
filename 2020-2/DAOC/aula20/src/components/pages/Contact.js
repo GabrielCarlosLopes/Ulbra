@@ -38,7 +38,7 @@ function Contact() {
                         <label>Nome: </label>
                         <input
                             ref={register({
-                                required: "Required"
+                                required: "Você precisa ter um nome"
                             })}
                             className="form-control"
                             type="text"

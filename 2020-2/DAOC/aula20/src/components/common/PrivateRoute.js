@@ -11,7 +11,10 @@ export default function PrivateRoute({ component: Component, ...rest }) {
           isAdmin() ?
             <Component {...props} />
             :
-            console.log('não autenticado')
+            <div className="container">
+              <h3>Ops!</h3>
+              <p>Parece que vôce tentou entrar em uma area que necessita ser um administrador!</p>
+            </div>
         )
       }
     />
