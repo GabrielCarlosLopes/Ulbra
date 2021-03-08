@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background: #3B3C59 !important;
+}
+
+@media(max-width: 1080px) {
+    html {
+       font-size: 87%;
+    }
+ }
+ 
+ @media(max-width: 720px) {
+    html {
+       font-size: 65%;
+    }
+ }
+
+.img-header {
+    background-color: #3B3C59 !important;
+}
+
+
+img {
+    margin-top: 3rem;
+    width: 25rem;
+    padding: 1rem;
+}
+
+nav {
+    color: lightgray !important;
+    background: #2F3159  !important;
+}
+
+nav h5 {
+    padding-right: 0.50rem;
+}
+
+
+#about {
+    height: 35rem;
+    background: #9798A6;
+    padding-top: 1rem;
+}
+
+#about h1 {
+    padding-top: 2rem;
+    color: white !important;
+}
+
+#about p {
+    color: white;
+    text-align: justify;
+    padding: 4rem 4rem 0 4rem;
+    font-size: 1.5rem;
+}
+
+#skills {
+    padding: 1rem;
+}
+
+.card {
+    margin-bottom: 1rem;
+    border-top: 5px solid #9798A6 !important;
+    border-radius: 12px !important;
+}
+
+#skills h1 {
+    padding-top: 3.5rem;
+    color: white !important;
+}
+
+
+#contact {
+    height: 40rem;
+    background: #74768C;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#contact h1 {
+    padding-top: 3rem;
+    color: white !important;
+}
+
+.btn img {
+    width: 10rem;
+    margin-top: 0;
+}

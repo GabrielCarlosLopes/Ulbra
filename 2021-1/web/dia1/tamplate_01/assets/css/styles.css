@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+@media(max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media(max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+header {
+    text-align: center;
+    background: black !important;
+    color: white;
+    margin-bottom: 0 !important;
+}
+
+nav {
+    padding: 20px 20px 20px 20px;
+    background: rgb(113, 109, 116);
+}
+
+nav a:any-link {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+section {
+    text-align: justify;
+    padding: 20px 20px 20px 20px;
+}
+
+footer {
+    background: black !important;
+    color: white;
+    text-align: center;
+}
