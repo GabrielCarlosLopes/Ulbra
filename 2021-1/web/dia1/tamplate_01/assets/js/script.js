@@ -1,4 +1,11 @@
+function nome(paistime) {
+    alert(paistime);
+}
+
+
 $(document).ready(function() {
+
+    
 
     $("#home").click( function () {
         $("#content").load("./contents/home.html");
